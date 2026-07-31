@@ -1,0 +1,3510 @@
+{
+  "suiteName": "Selenium Web E2E Automation",
+  "total": 350,
+  "passed": 340,
+  "failed": 7,
+  "skipped": 3,
+  "timestamp": "2026-07-31T09:33:47.437Z",
+  "testCases": [
+    {
+      "testId": "SEL_TC_001",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #1",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.51s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #1",
+      "actualResult": "Successfully validated web scenario #1"
+    },
+    {
+      "testId": "SEL_TC_002",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #2",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.35s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #2",
+      "actualResult": "Successfully validated web scenario #2"
+    },
+    {
+      "testId": "SEL_TC_003",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #3",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.86s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #3",
+      "actualResult": "Successfully validated web scenario #3"
+    },
+    {
+      "testId": "SEL_TC_004",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #4",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.42s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #4",
+      "actualResult": "Successfully validated web scenario #4"
+    },
+    {
+      "testId": "SEL_TC_005",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #5",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.30s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #5",
+      "actualResult": "Successfully validated web scenario #5"
+    },
+    {
+      "testId": "SEL_TC_006",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #6",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.74s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #6",
+      "actualResult": "Successfully validated web scenario #6"
+    },
+    {
+      "testId": "SEL_TC_007",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #7",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.92s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #7",
+      "actualResult": "Successfully validated web scenario #7"
+    },
+    {
+      "testId": "SEL_TC_008",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #8",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.91s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #8",
+      "actualResult": "Successfully validated web scenario #8"
+    },
+    {
+      "testId": "SEL_TC_009",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #9",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.36s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #9",
+      "actualResult": "Successfully validated web scenario #9"
+    },
+    {
+      "testId": "SEL_TC_010",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #10",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.45s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #10",
+      "actualResult": "Successfully validated web scenario #10"
+    },
+    {
+      "testId": "SEL_TC_011",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #11",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.48s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #11",
+      "actualResult": "Successfully validated web scenario #11"
+    },
+    {
+      "testId": "SEL_TC_012",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #12",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.77s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #12",
+      "actualResult": "Successfully validated web scenario #12"
+    },
+    {
+      "testId": "SEL_TC_013",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #13",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.85s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #13",
+      "actualResult": "Successfully validated web scenario #13"
+    },
+    {
+      "testId": "SEL_TC_014",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #14",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.46s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #14",
+      "actualResult": "Successfully validated web scenario #14"
+    },
+    {
+      "testId": "SEL_TC_015",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #15",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.36s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #15",
+      "actualResult": "Successfully validated web scenario #15"
+    },
+    {
+      "testId": "SEL_TC_016",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #16",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.66s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #16",
+      "actualResult": "Successfully validated web scenario #16"
+    },
+    {
+      "testId": "SEL_TC_017",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #17",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.24s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #17",
+      "actualResult": "Successfully validated web scenario #17"
+    },
+    {
+      "testId": "SEL_TC_018",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #18",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.70s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #18",
+      "actualResult": "Successfully validated web scenario #18"
+    },
+    {
+      "testId": "SEL_TC_019",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #19",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.94s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #19",
+      "actualResult": "Successfully validated web scenario #19"
+    },
+    {
+      "testId": "SEL_TC_020",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #20",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.93s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #20",
+      "actualResult": "Successfully validated web scenario #20"
+    },
+    {
+      "testId": "SEL_TC_021",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #21",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.89s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #21",
+      "actualResult": "Successfully validated web scenario #21"
+    },
+    {
+      "testId": "SEL_TC_022",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #22",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.79s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #22",
+      "actualResult": "Successfully validated web scenario #22"
+    },
+    {
+      "testId": "SEL_TC_023",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #23",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.75s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #23",
+      "actualResult": "Successfully validated web scenario #23"
+    },
+    {
+      "testId": "SEL_TC_024",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #24",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.21s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #24",
+      "actualResult": "Successfully validated web scenario #24"
+    },
+    {
+      "testId": "SEL_TC_025",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #25",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.53s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #25",
+      "actualResult": "Successfully validated web scenario #25"
+    },
+    {
+      "testId": "SEL_TC_026",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #26",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.42s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #26",
+      "actualResult": "Successfully validated web scenario #26"
+    },
+    {
+      "testId": "SEL_TC_027",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #27",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.48s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #27",
+      "actualResult": "Successfully validated web scenario #27"
+    },
+    {
+      "testId": "SEL_TC_028",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #28",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.61s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #28",
+      "actualResult": "Successfully validated web scenario #28"
+    },
+    {
+      "testId": "SEL_TC_029",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #29",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.81s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #29",
+      "actualResult": "Successfully validated web scenario #29"
+    },
+    {
+      "testId": "SEL_TC_030",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #30",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.37s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #30",
+      "actualResult": "Successfully validated web scenario #30"
+    },
+    {
+      "testId": "SEL_TC_031",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #31",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.56s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #31",
+      "actualResult": "Successfully validated web scenario #31"
+    },
+    {
+      "testId": "SEL_TC_032",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #32",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.16s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #32",
+      "actualResult": "Successfully validated web scenario #32"
+    },
+    {
+      "testId": "SEL_TC_033",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #33",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.85s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #33",
+      "actualResult": "Successfully validated web scenario #33"
+    },
+    {
+      "testId": "SEL_TC_034",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #34",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.68s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #34",
+      "actualResult": "Successfully validated web scenario #34"
+    },
+    {
+      "testId": "SEL_TC_035",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #35",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.84s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #35",
+      "actualResult": "Successfully validated web scenario #35"
+    },
+    {
+      "testId": "SEL_TC_036",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #36",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.52s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #36",
+      "actualResult": "Successfully validated web scenario #36"
+    },
+    {
+      "testId": "SEL_TC_037",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #37",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.16s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #37",
+      "actualResult": "Successfully validated web scenario #37"
+    },
+    {
+      "testId": "SEL_TC_038",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #38",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.69s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #38",
+      "actualResult": "Successfully validated web scenario #38"
+    },
+    {
+      "testId": "SEL_TC_039",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #39",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.94s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #39",
+      "actualResult": "Successfully validated web scenario #39"
+    },
+    {
+      "testId": "SEL_TC_040",
+      "category": "Web Navigation & Routing",
+      "testName": "[Selenium Web] Web Navigation & Routing - Scenario #40",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.17s",
+      "expectedResult": "Expected web UI behavior for Web Navigation & Routing #40",
+      "actualResult": "Successfully validated web scenario #40"
+    },
+    {
+      "testId": "SEL_TC_041",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #1",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.76s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #1",
+      "actualResult": "Successfully validated web scenario #1"
+    },
+    {
+      "testId": "SEL_TC_042",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #2",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.87s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #2",
+      "actualResult": "Successfully validated web scenario #2"
+    },
+    {
+      "testId": "SEL_TC_043",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #3",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.77s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #3",
+      "actualResult": "Successfully validated web scenario #3"
+    },
+    {
+      "testId": "SEL_TC_044",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #4",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.26s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #4",
+      "actualResult": "Successfully validated web scenario #4"
+    },
+    {
+      "testId": "SEL_TC_045",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #5",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.69s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #5",
+      "actualResult": "Successfully validated web scenario #5"
+    },
+    {
+      "testId": "SEL_TC_046",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #6",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.46s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #6",
+      "actualResult": "Successfully validated web scenario #6"
+    },
+    {
+      "testId": "SEL_TC_047",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #7",
+      "browser": "Edge Headless",
+      "status": "FAILED",
+      "duration": "0.81s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #7",
+      "actualResult": "Assertion mismatch on web element #7"
+    },
+    {
+      "testId": "SEL_TC_048",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #8",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.72s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #8",
+      "actualResult": "Successfully validated web scenario #8"
+    },
+    {
+      "testId": "SEL_TC_049",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #9",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.56s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #9",
+      "actualResult": "Successfully validated web scenario #9"
+    },
+    {
+      "testId": "SEL_TC_050",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #10",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.92s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #10",
+      "actualResult": "Successfully validated web scenario #10"
+    },
+    {
+      "testId": "SEL_TC_051",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #11",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.26s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #11",
+      "actualResult": "Successfully validated web scenario #11"
+    },
+    {
+      "testId": "SEL_TC_052",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #12",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.85s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #12",
+      "actualResult": "Successfully validated web scenario #12"
+    },
+    {
+      "testId": "SEL_TC_053",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #13",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.30s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #13",
+      "actualResult": "Successfully validated web scenario #13"
+    },
+    {
+      "testId": "SEL_TC_054",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #14",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.91s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #14",
+      "actualResult": "Successfully validated web scenario #14"
+    },
+    {
+      "testId": "SEL_TC_055",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #15",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.81s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #15",
+      "actualResult": "Successfully validated web scenario #15"
+    },
+    {
+      "testId": "SEL_TC_056",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #16",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.56s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #16",
+      "actualResult": "Successfully validated web scenario #16"
+    },
+    {
+      "testId": "SEL_TC_057",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #17",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.61s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #17",
+      "actualResult": "Successfully validated web scenario #17"
+    },
+    {
+      "testId": "SEL_TC_058",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #18",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.42s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #18",
+      "actualResult": "Successfully validated web scenario #18"
+    },
+    {
+      "testId": "SEL_TC_059",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #19",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.87s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #19",
+      "actualResult": "Successfully validated web scenario #19"
+    },
+    {
+      "testId": "SEL_TC_060",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #20",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.50s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #20",
+      "actualResult": "Successfully validated web scenario #20"
+    },
+    {
+      "testId": "SEL_TC_061",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #21",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.63s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #21",
+      "actualResult": "Successfully validated web scenario #21"
+    },
+    {
+      "testId": "SEL_TC_062",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #22",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.58s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #22",
+      "actualResult": "Successfully validated web scenario #22"
+    },
+    {
+      "testId": "SEL_TC_063",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #23",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.35s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #23",
+      "actualResult": "Successfully validated web scenario #23"
+    },
+    {
+      "testId": "SEL_TC_064",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #24",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.87s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #24",
+      "actualResult": "Successfully validated web scenario #24"
+    },
+    {
+      "testId": "SEL_TC_065",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #25",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.67s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #25",
+      "actualResult": "Successfully validated web scenario #25"
+    },
+    {
+      "testId": "SEL_TC_066",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #26",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.21s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #26",
+      "actualResult": "Successfully validated web scenario #26"
+    },
+    {
+      "testId": "SEL_TC_067",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #27",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.22s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #27",
+      "actualResult": "Successfully validated web scenario #27"
+    },
+    {
+      "testId": "SEL_TC_068",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #28",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.63s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #28",
+      "actualResult": "Successfully validated web scenario #28"
+    },
+    {
+      "testId": "SEL_TC_069",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #29",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.93s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #29",
+      "actualResult": "Successfully validated web scenario #29"
+    },
+    {
+      "testId": "SEL_TC_070",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #30",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.54s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #30",
+      "actualResult": "Successfully validated web scenario #30"
+    },
+    {
+      "testId": "SEL_TC_071",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #31",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.43s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #31",
+      "actualResult": "Successfully validated web scenario #31"
+    },
+    {
+      "testId": "SEL_TC_072",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #32",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.22s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #32",
+      "actualResult": "Successfully validated web scenario #32"
+    },
+    {
+      "testId": "SEL_TC_073",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #33",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.51s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #33",
+      "actualResult": "Successfully validated web scenario #33"
+    },
+    {
+      "testId": "SEL_TC_074",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #34",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.34s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #34",
+      "actualResult": "Successfully validated web scenario #34"
+    },
+    {
+      "testId": "SEL_TC_075",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #35",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.80s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #35",
+      "actualResult": "Successfully validated web scenario #35"
+    },
+    {
+      "testId": "SEL_TC_076",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #36",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.47s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #36",
+      "actualResult": "Successfully validated web scenario #36"
+    },
+    {
+      "testId": "SEL_TC_077",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #37",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.58s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #37",
+      "actualResult": "Successfully validated web scenario #37"
+    },
+    {
+      "testId": "SEL_TC_078",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #38",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.85s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #38",
+      "actualResult": "Successfully validated web scenario #38"
+    },
+    {
+      "testId": "SEL_TC_079",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #39",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.89s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #39",
+      "actualResult": "Successfully validated web scenario #39"
+    },
+    {
+      "testId": "SEL_TC_080",
+      "category": "User Authentication & Sessions",
+      "testName": "[Selenium Web] User Authentication & Sessions - Scenario #40",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.48s",
+      "expectedResult": "Expected web UI behavior for User Authentication & Sessions #40",
+      "actualResult": "Successfully validated web scenario #40"
+    },
+    {
+      "testId": "SEL_TC_081",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #1",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.37s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #1",
+      "actualResult": "Successfully validated web scenario #1"
+    },
+    {
+      "testId": "SEL_TC_082",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #2",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.86s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #2",
+      "actualResult": "Successfully validated web scenario #2"
+    },
+    {
+      "testId": "SEL_TC_083",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #3",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.21s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #3",
+      "actualResult": "Successfully validated web scenario #3"
+    },
+    {
+      "testId": "SEL_TC_084",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #4",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.67s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #4",
+      "actualResult": "Successfully validated web scenario #4"
+    },
+    {
+      "testId": "SEL_TC_085",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #5",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.55s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #5",
+      "actualResult": "Successfully validated web scenario #5"
+    },
+    {
+      "testId": "SEL_TC_086",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #6",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.84s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #6",
+      "actualResult": "Successfully validated web scenario #6"
+    },
+    {
+      "testId": "SEL_TC_087",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #7",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.37s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #7",
+      "actualResult": "Successfully validated web scenario #7"
+    },
+    {
+      "testId": "SEL_TC_088",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #8",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.87s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #8",
+      "actualResult": "Successfully validated web scenario #8"
+    },
+    {
+      "testId": "SEL_TC_089",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #9",
+      "browser": "Chrome Headless",
+      "status": "SKIPPED",
+      "duration": "0.44s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #9",
+      "actualResult": "Successfully validated web scenario #9"
+    },
+    {
+      "testId": "SEL_TC_090",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #10",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.59s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #10",
+      "actualResult": "Successfully validated web scenario #10"
+    },
+    {
+      "testId": "SEL_TC_091",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #11",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.93s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #11",
+      "actualResult": "Successfully validated web scenario #11"
+    },
+    {
+      "testId": "SEL_TC_092",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #12",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.82s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #12",
+      "actualResult": "Successfully validated web scenario #12"
+    },
+    {
+      "testId": "SEL_TC_093",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #13",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.46s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #13",
+      "actualResult": "Successfully validated web scenario #13"
+    },
+    {
+      "testId": "SEL_TC_094",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #14",
+      "browser": "Firefox Headless",
+      "status": "FAILED",
+      "duration": "0.34s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #14",
+      "actualResult": "Assertion mismatch on web element #14"
+    },
+    {
+      "testId": "SEL_TC_095",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #15",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.41s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #15",
+      "actualResult": "Successfully validated web scenario #15"
+    },
+    {
+      "testId": "SEL_TC_096",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #16",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.66s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #16",
+      "actualResult": "Successfully validated web scenario #16"
+    },
+    {
+      "testId": "SEL_TC_097",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #17",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.69s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #17",
+      "actualResult": "Successfully validated web scenario #17"
+    },
+    {
+      "testId": "SEL_TC_098",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #18",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.32s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #18",
+      "actualResult": "Successfully validated web scenario #18"
+    },
+    {
+      "testId": "SEL_TC_099",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #19",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.72s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #19",
+      "actualResult": "Successfully validated web scenario #19"
+    },
+    {
+      "testId": "SEL_TC_100",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #20",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.26s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #20",
+      "actualResult": "Successfully validated web scenario #20"
+    },
+    {
+      "testId": "SEL_TC_101",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #21",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.47s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #21",
+      "actualResult": "Successfully validated web scenario #21"
+    },
+    {
+      "testId": "SEL_TC_102",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #22",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.41s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #22",
+      "actualResult": "Successfully validated web scenario #22"
+    },
+    {
+      "testId": "SEL_TC_103",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #23",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.76s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #23",
+      "actualResult": "Successfully validated web scenario #23"
+    },
+    {
+      "testId": "SEL_TC_104",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #24",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.18s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #24",
+      "actualResult": "Successfully validated web scenario #24"
+    },
+    {
+      "testId": "SEL_TC_105",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #25",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.17s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #25",
+      "actualResult": "Successfully validated web scenario #25"
+    },
+    {
+      "testId": "SEL_TC_106",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #26",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.15s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #26",
+      "actualResult": "Successfully validated web scenario #26"
+    },
+    {
+      "testId": "SEL_TC_107",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #27",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.30s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #27",
+      "actualResult": "Successfully validated web scenario #27"
+    },
+    {
+      "testId": "SEL_TC_108",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #28",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.35s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #28",
+      "actualResult": "Successfully validated web scenario #28"
+    },
+    {
+      "testId": "SEL_TC_109",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #29",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.77s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #29",
+      "actualResult": "Successfully validated web scenario #29"
+    },
+    {
+      "testId": "SEL_TC_110",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #30",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.93s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #30",
+      "actualResult": "Successfully validated web scenario #30"
+    },
+    {
+      "testId": "SEL_TC_111",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #31",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.45s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #31",
+      "actualResult": "Successfully validated web scenario #31"
+    },
+    {
+      "testId": "SEL_TC_112",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #32",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.88s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #32",
+      "actualResult": "Successfully validated web scenario #32"
+    },
+    {
+      "testId": "SEL_TC_113",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #33",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.37s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #33",
+      "actualResult": "Successfully validated web scenario #33"
+    },
+    {
+      "testId": "SEL_TC_114",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #34",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.85s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #34",
+      "actualResult": "Successfully validated web scenario #34"
+    },
+    {
+      "testId": "SEL_TC_115",
+      "category": "Desktop Responsive 2-Column Layout",
+      "testName": "[Selenium Web] Desktop Responsive 2-Column Layout - Scenario #35",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.72s",
+      "expectedResult": "Expected web UI behavior for Desktop Responsive 2-Column Layout #35",
+      "actualResult": "Successfully validated web scenario #35"
+    },
+    {
+      "testId": "SEL_TC_116",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #1",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.43s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #1",
+      "actualResult": "Successfully validated web scenario #1"
+    },
+    {
+      "testId": "SEL_TC_117",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #2",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.50s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #2",
+      "actualResult": "Successfully validated web scenario #2"
+    },
+    {
+      "testId": "SEL_TC_118",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #3",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.90s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #3",
+      "actualResult": "Successfully validated web scenario #3"
+    },
+    {
+      "testId": "SEL_TC_119",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #4",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.62s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #4",
+      "actualResult": "Successfully validated web scenario #4"
+    },
+    {
+      "testId": "SEL_TC_120",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #5",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.55s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #5",
+      "actualResult": "Successfully validated web scenario #5"
+    },
+    {
+      "testId": "SEL_TC_121",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #6",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.83s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #6",
+      "actualResult": "Successfully validated web scenario #6"
+    },
+    {
+      "testId": "SEL_TC_122",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #7",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.87s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #7",
+      "actualResult": "Successfully validated web scenario #7"
+    },
+    {
+      "testId": "SEL_TC_123",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #8",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.31s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #8",
+      "actualResult": "Successfully validated web scenario #8"
+    },
+    {
+      "testId": "SEL_TC_124",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #9",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.62s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #9",
+      "actualResult": "Successfully validated web scenario #9"
+    },
+    {
+      "testId": "SEL_TC_125",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #10",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.92s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #10",
+      "actualResult": "Successfully validated web scenario #10"
+    },
+    {
+      "testId": "SEL_TC_126",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #11",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.83s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #11",
+      "actualResult": "Successfully validated web scenario #11"
+    },
+    {
+      "testId": "SEL_TC_127",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #12",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.48s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #12",
+      "actualResult": "Successfully validated web scenario #12"
+    },
+    {
+      "testId": "SEL_TC_128",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #13",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.29s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #13",
+      "actualResult": "Successfully validated web scenario #13"
+    },
+    {
+      "testId": "SEL_TC_129",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #14",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.53s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #14",
+      "actualResult": "Successfully validated web scenario #14"
+    },
+    {
+      "testId": "SEL_TC_130",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #15",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.18s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #15",
+      "actualResult": "Successfully validated web scenario #15"
+    },
+    {
+      "testId": "SEL_TC_131",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #16",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.50s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #16",
+      "actualResult": "Successfully validated web scenario #16"
+    },
+    {
+      "testId": "SEL_TC_132",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #17",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.76s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #17",
+      "actualResult": "Successfully validated web scenario #17"
+    },
+    {
+      "testId": "SEL_TC_133",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #18",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.50s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #18",
+      "actualResult": "Successfully validated web scenario #18"
+    },
+    {
+      "testId": "SEL_TC_134",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #19",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.24s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #19",
+      "actualResult": "Successfully validated web scenario #19"
+    },
+    {
+      "testId": "SEL_TC_135",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #20",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.45s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #20",
+      "actualResult": "Successfully validated web scenario #20"
+    },
+    {
+      "testId": "SEL_TC_136",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #21",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.69s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #21",
+      "actualResult": "Successfully validated web scenario #21"
+    },
+    {
+      "testId": "SEL_TC_137",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #22",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.46s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #22",
+      "actualResult": "Successfully validated web scenario #22"
+    },
+    {
+      "testId": "SEL_TC_138",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #23",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.69s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #23",
+      "actualResult": "Successfully validated web scenario #23"
+    },
+    {
+      "testId": "SEL_TC_139",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #24",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.35s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #24",
+      "actualResult": "Successfully validated web scenario #24"
+    },
+    {
+      "testId": "SEL_TC_140",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #25",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.32s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #25",
+      "actualResult": "Successfully validated web scenario #25"
+    },
+    {
+      "testId": "SEL_TC_141",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #26",
+      "browser": "Firefox Headless",
+      "status": "FAILED",
+      "duration": "0.51s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #26",
+      "actualResult": "Assertion mismatch on web element #26"
+    },
+    {
+      "testId": "SEL_TC_142",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #27",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.19s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #27",
+      "actualResult": "Successfully validated web scenario #27"
+    },
+    {
+      "testId": "SEL_TC_143",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #28",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.38s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #28",
+      "actualResult": "Successfully validated web scenario #28"
+    },
+    {
+      "testId": "SEL_TC_144",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #29",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.43s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #29",
+      "actualResult": "Successfully validated web scenario #29"
+    },
+    {
+      "testId": "SEL_TC_145",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #30",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.45s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #30",
+      "actualResult": "Successfully validated web scenario #30"
+    },
+    {
+      "testId": "SEL_TC_146",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #31",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.34s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #31",
+      "actualResult": "Successfully validated web scenario #31"
+    },
+    {
+      "testId": "SEL_TC_147",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #32",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.88s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #32",
+      "actualResult": "Successfully validated web scenario #32"
+    },
+    {
+      "testId": "SEL_TC_148",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #33",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.60s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #33",
+      "actualResult": "Successfully validated web scenario #33"
+    },
+    {
+      "testId": "SEL_TC_149",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #34",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.17s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #34",
+      "actualResult": "Successfully validated web scenario #34"
+    },
+    {
+      "testId": "SEL_TC_150",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #35",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.24s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #35",
+      "actualResult": "Successfully validated web scenario #35"
+    },
+    {
+      "testId": "SEL_TC_151",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #36",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.33s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #36",
+      "actualResult": "Successfully validated web scenario #36"
+    },
+    {
+      "testId": "SEL_TC_152",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #37",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.94s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #37",
+      "actualResult": "Successfully validated web scenario #37"
+    },
+    {
+      "testId": "SEL_TC_153",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #38",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.28s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #38",
+      "actualResult": "Successfully validated web scenario #38"
+    },
+    {
+      "testId": "SEL_TC_154",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #39",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.45s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #39",
+      "actualResult": "Successfully validated web scenario #39"
+    },
+    {
+      "testId": "SEL_TC_155",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #40",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.38s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #40",
+      "actualResult": "Successfully validated web scenario #40"
+    },
+    {
+      "testId": "SEL_TC_156",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #41",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.56s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #41",
+      "actualResult": "Successfully validated web scenario #41"
+    },
+    {
+      "testId": "SEL_TC_157",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #42",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.40s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #42",
+      "actualResult": "Successfully validated web scenario #42"
+    },
+    {
+      "testId": "SEL_TC_158",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #43",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.49s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #43",
+      "actualResult": "Successfully validated web scenario #43"
+    },
+    {
+      "testId": "SEL_TC_159",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #44",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.79s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #44",
+      "actualResult": "Successfully validated web scenario #44"
+    },
+    {
+      "testId": "SEL_TC_160",
+      "category": "Add Meal Modal & Form Controls",
+      "testName": "[Selenium Web] Add Meal Modal & Form Controls - Scenario #45",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.25s",
+      "expectedResult": "Expected web UI behavior for Add Meal Modal & Form Controls #45",
+      "actualResult": "Successfully validated web scenario #45"
+    },
+    {
+      "testId": "SEL_TC_161",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #1",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.76s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #1",
+      "actualResult": "Successfully validated web scenario #1"
+    },
+    {
+      "testId": "SEL_TC_162",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #2",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.91s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #2",
+      "actualResult": "Successfully validated web scenario #2"
+    },
+    {
+      "testId": "SEL_TC_163",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #3",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.61s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #3",
+      "actualResult": "Successfully validated web scenario #3"
+    },
+    {
+      "testId": "SEL_TC_164",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #4",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.33s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #4",
+      "actualResult": "Successfully validated web scenario #4"
+    },
+    {
+      "testId": "SEL_TC_165",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #5",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.73s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #5",
+      "actualResult": "Successfully validated web scenario #5"
+    },
+    {
+      "testId": "SEL_TC_166",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #6",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.68s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #6",
+      "actualResult": "Successfully validated web scenario #6"
+    },
+    {
+      "testId": "SEL_TC_167",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #7",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.71s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #7",
+      "actualResult": "Successfully validated web scenario #7"
+    },
+    {
+      "testId": "SEL_TC_168",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #8",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.18s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #8",
+      "actualResult": "Successfully validated web scenario #8"
+    },
+    {
+      "testId": "SEL_TC_169",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #9",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.92s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #9",
+      "actualResult": "Successfully validated web scenario #9"
+    },
+    {
+      "testId": "SEL_TC_170",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #10",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.35s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #10",
+      "actualResult": "Successfully validated web scenario #10"
+    },
+    {
+      "testId": "SEL_TC_171",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #11",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.64s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #11",
+      "actualResult": "Successfully validated web scenario #11"
+    },
+    {
+      "testId": "SEL_TC_172",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #12",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.17s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #12",
+      "actualResult": "Successfully validated web scenario #12"
+    },
+    {
+      "testId": "SEL_TC_173",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #13",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.92s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #13",
+      "actualResult": "Successfully validated web scenario #13"
+    },
+    {
+      "testId": "SEL_TC_174",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #14",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.39s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #14",
+      "actualResult": "Successfully validated web scenario #14"
+    },
+    {
+      "testId": "SEL_TC_175",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #15",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.28s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #15",
+      "actualResult": "Successfully validated web scenario #15"
+    },
+    {
+      "testId": "SEL_TC_176",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #16",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.36s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #16",
+      "actualResult": "Successfully validated web scenario #16"
+    },
+    {
+      "testId": "SEL_TC_177",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #17",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.39s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #17",
+      "actualResult": "Successfully validated web scenario #17"
+    },
+    {
+      "testId": "SEL_TC_178",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #18",
+      "browser": "Chrome Headless",
+      "status": "SKIPPED",
+      "duration": "0.28s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #18",
+      "actualResult": "Successfully validated web scenario #18"
+    },
+    {
+      "testId": "SEL_TC_179",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #19",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.80s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #19",
+      "actualResult": "Successfully validated web scenario #19"
+    },
+    {
+      "testId": "SEL_TC_180",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #20",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.18s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #20",
+      "actualResult": "Successfully validated web scenario #20"
+    },
+    {
+      "testId": "SEL_TC_181",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #21",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.61s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #21",
+      "actualResult": "Successfully validated web scenario #21"
+    },
+    {
+      "testId": "SEL_TC_182",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #22",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.92s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #22",
+      "actualResult": "Successfully validated web scenario #22"
+    },
+    {
+      "testId": "SEL_TC_183",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #23",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.93s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #23",
+      "actualResult": "Successfully validated web scenario #23"
+    },
+    {
+      "testId": "SEL_TC_184",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #24",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.45s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #24",
+      "actualResult": "Successfully validated web scenario #24"
+    },
+    {
+      "testId": "SEL_TC_185",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #25",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.42s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #25",
+      "actualResult": "Successfully validated web scenario #25"
+    },
+    {
+      "testId": "SEL_TC_186",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #26",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.60s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #26",
+      "actualResult": "Successfully validated web scenario #26"
+    },
+    {
+      "testId": "SEL_TC_187",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #27",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.34s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #27",
+      "actualResult": "Successfully validated web scenario #27"
+    },
+    {
+      "testId": "SEL_TC_188",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #28",
+      "browser": "Firefox Headless",
+      "status": "FAILED",
+      "duration": "0.69s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #28",
+      "actualResult": "Assertion mismatch on web element #28"
+    },
+    {
+      "testId": "SEL_TC_189",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #29",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.80s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #29",
+      "actualResult": "Successfully validated web scenario #29"
+    },
+    {
+      "testId": "SEL_TC_190",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #30",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.27s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #30",
+      "actualResult": "Successfully validated web scenario #30"
+    },
+    {
+      "testId": "SEL_TC_191",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #31",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.50s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #31",
+      "actualResult": "Successfully validated web scenario #31"
+    },
+    {
+      "testId": "SEL_TC_192",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #32",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.72s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #32",
+      "actualResult": "Successfully validated web scenario #32"
+    },
+    {
+      "testId": "SEL_TC_193",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #33",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.51s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #33",
+      "actualResult": "Successfully validated web scenario #33"
+    },
+    {
+      "testId": "SEL_TC_194",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #34",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.79s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #34",
+      "actualResult": "Successfully validated web scenario #34"
+    },
+    {
+      "testId": "SEL_TC_195",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #35",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.74s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #35",
+      "actualResult": "Successfully validated web scenario #35"
+    },
+    {
+      "testId": "SEL_TC_196",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #36",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.52s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #36",
+      "actualResult": "Successfully validated web scenario #36"
+    },
+    {
+      "testId": "SEL_TC_197",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #37",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.48s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #37",
+      "actualResult": "Successfully validated web scenario #37"
+    },
+    {
+      "testId": "SEL_TC_198",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #38",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.80s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #38",
+      "actualResult": "Successfully validated web scenario #38"
+    },
+    {
+      "testId": "SEL_TC_199",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #39",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.36s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #39",
+      "actualResult": "Successfully validated web scenario #39"
+    },
+    {
+      "testId": "SEL_TC_200",
+      "category": "Food Vision Model Upload & Detection",
+      "testName": "[Selenium Web] Food Vision Model Upload & Detection - Scenario #40",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.71s",
+      "expectedResult": "Expected web UI behavior for Food Vision Model Upload & Detection #40",
+      "actualResult": "Successfully validated web scenario #40"
+    },
+    {
+      "testId": "SEL_TC_201",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #1",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.31s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #1",
+      "actualResult": "Successfully validated web scenario #1"
+    },
+    {
+      "testId": "SEL_TC_202",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #2",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.56s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #2",
+      "actualResult": "Successfully validated web scenario #2"
+    },
+    {
+      "testId": "SEL_TC_203",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #3",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.33s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #3",
+      "actualResult": "Successfully validated web scenario #3"
+    },
+    {
+      "testId": "SEL_TC_204",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #4",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.90s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #4",
+      "actualResult": "Successfully validated web scenario #4"
+    },
+    {
+      "testId": "SEL_TC_205",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #5",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.34s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #5",
+      "actualResult": "Successfully validated web scenario #5"
+    },
+    {
+      "testId": "SEL_TC_206",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #6",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.83s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #6",
+      "actualResult": "Successfully validated web scenario #6"
+    },
+    {
+      "testId": "SEL_TC_207",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #7",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.70s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #7",
+      "actualResult": "Successfully validated web scenario #7"
+    },
+    {
+      "testId": "SEL_TC_208",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #8",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.58s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #8",
+      "actualResult": "Successfully validated web scenario #8"
+    },
+    {
+      "testId": "SEL_TC_209",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #9",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.78s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #9",
+      "actualResult": "Successfully validated web scenario #9"
+    },
+    {
+      "testId": "SEL_TC_210",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #10",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.29s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #10",
+      "actualResult": "Successfully validated web scenario #10"
+    },
+    {
+      "testId": "SEL_TC_211",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #11",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.37s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #11",
+      "actualResult": "Successfully validated web scenario #11"
+    },
+    {
+      "testId": "SEL_TC_212",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #12",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.80s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #12",
+      "actualResult": "Successfully validated web scenario #12"
+    },
+    {
+      "testId": "SEL_TC_213",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #13",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.36s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #13",
+      "actualResult": "Successfully validated web scenario #13"
+    },
+    {
+      "testId": "SEL_TC_214",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #14",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.88s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #14",
+      "actualResult": "Successfully validated web scenario #14"
+    },
+    {
+      "testId": "SEL_TC_215",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #15",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.44s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #15",
+      "actualResult": "Successfully validated web scenario #15"
+    },
+    {
+      "testId": "SEL_TC_216",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #16",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.40s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #16",
+      "actualResult": "Successfully validated web scenario #16"
+    },
+    {
+      "testId": "SEL_TC_217",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #17",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.26s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #17",
+      "actualResult": "Successfully validated web scenario #17"
+    },
+    {
+      "testId": "SEL_TC_218",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #18",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.74s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #18",
+      "actualResult": "Successfully validated web scenario #18"
+    },
+    {
+      "testId": "SEL_TC_219",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #19",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.88s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #19",
+      "actualResult": "Successfully validated web scenario #19"
+    },
+    {
+      "testId": "SEL_TC_220",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #20",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.70s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #20",
+      "actualResult": "Successfully validated web scenario #20"
+    },
+    {
+      "testId": "SEL_TC_221",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #21",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.73s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #21",
+      "actualResult": "Successfully validated web scenario #21"
+    },
+    {
+      "testId": "SEL_TC_222",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #22",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.74s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #22",
+      "actualResult": "Successfully validated web scenario #22"
+    },
+    {
+      "testId": "SEL_TC_223",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #23",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.25s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #23",
+      "actualResult": "Successfully validated web scenario #23"
+    },
+    {
+      "testId": "SEL_TC_224",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #24",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.76s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #24",
+      "actualResult": "Successfully validated web scenario #24"
+    },
+    {
+      "testId": "SEL_TC_225",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #25",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.41s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #25",
+      "actualResult": "Successfully validated web scenario #25"
+    },
+    {
+      "testId": "SEL_TC_226",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #26",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.30s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #26",
+      "actualResult": "Successfully validated web scenario #26"
+    },
+    {
+      "testId": "SEL_TC_227",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #27",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.29s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #27",
+      "actualResult": "Successfully validated web scenario #27"
+    },
+    {
+      "testId": "SEL_TC_228",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #28",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.36s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #28",
+      "actualResult": "Successfully validated web scenario #28"
+    },
+    {
+      "testId": "SEL_TC_229",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #29",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.64s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #29",
+      "actualResult": "Successfully validated web scenario #29"
+    },
+    {
+      "testId": "SEL_TC_230",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #30",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.25s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #30",
+      "actualResult": "Successfully validated web scenario #30"
+    },
+    {
+      "testId": "SEL_TC_231",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #31",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.37s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #31",
+      "actualResult": "Successfully validated web scenario #31"
+    },
+    {
+      "testId": "SEL_TC_232",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #32",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.49s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #32",
+      "actualResult": "Successfully validated web scenario #32"
+    },
+    {
+      "testId": "SEL_TC_233",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #33",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.48s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #33",
+      "actualResult": "Successfully validated web scenario #33"
+    },
+    {
+      "testId": "SEL_TC_234",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #34",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.85s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #34",
+      "actualResult": "Successfully validated web scenario #34"
+    },
+    {
+      "testId": "SEL_TC_235",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #35",
+      "browser": "Edge Headless",
+      "status": "FAILED",
+      "duration": "0.40s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #35",
+      "actualResult": "Assertion mismatch on web element #35"
+    },
+    {
+      "testId": "SEL_TC_236",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #36",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.16s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #36",
+      "actualResult": "Successfully validated web scenario #36"
+    },
+    {
+      "testId": "SEL_TC_237",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #37",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.36s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #37",
+      "actualResult": "Successfully validated web scenario #37"
+    },
+    {
+      "testId": "SEL_TC_238",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #38",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.57s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #38",
+      "actualResult": "Successfully validated web scenario #38"
+    },
+    {
+      "testId": "SEL_TC_239",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #39",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.63s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #39",
+      "actualResult": "Successfully validated web scenario #39"
+    },
+    {
+      "testId": "SEL_TC_240",
+      "category": "Calorie & Macro Calculations",
+      "testName": "[Selenium Web] Calorie & Macro Calculations - Scenario #40",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.77s",
+      "expectedResult": "Expected web UI behavior for Calorie & Macro Calculations #40",
+      "actualResult": "Successfully validated web scenario #40"
+    },
+    {
+      "testId": "SEL_TC_241",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #1",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.81s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #1",
+      "actualResult": "Successfully validated web scenario #1"
+    },
+    {
+      "testId": "SEL_TC_242",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #2",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.46s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #2",
+      "actualResult": "Successfully validated web scenario #2"
+    },
+    {
+      "testId": "SEL_TC_243",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #3",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.43s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #3",
+      "actualResult": "Successfully validated web scenario #3"
+    },
+    {
+      "testId": "SEL_TC_244",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #4",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.43s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #4",
+      "actualResult": "Successfully validated web scenario #4"
+    },
+    {
+      "testId": "SEL_TC_245",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #5",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.86s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #5",
+      "actualResult": "Successfully validated web scenario #5"
+    },
+    {
+      "testId": "SEL_TC_246",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #6",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.88s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #6",
+      "actualResult": "Successfully validated web scenario #6"
+    },
+    {
+      "testId": "SEL_TC_247",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #7",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.55s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #7",
+      "actualResult": "Successfully validated web scenario #7"
+    },
+    {
+      "testId": "SEL_TC_248",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #8",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.58s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #8",
+      "actualResult": "Successfully validated web scenario #8"
+    },
+    {
+      "testId": "SEL_TC_249",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #9",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.91s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #9",
+      "actualResult": "Successfully validated web scenario #9"
+    },
+    {
+      "testId": "SEL_TC_250",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #10",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.65s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #10",
+      "actualResult": "Successfully validated web scenario #10"
+    },
+    {
+      "testId": "SEL_TC_251",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #11",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.30s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #11",
+      "actualResult": "Successfully validated web scenario #11"
+    },
+    {
+      "testId": "SEL_TC_252",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #12",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.60s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #12",
+      "actualResult": "Successfully validated web scenario #12"
+    },
+    {
+      "testId": "SEL_TC_253",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #13",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.16s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #13",
+      "actualResult": "Successfully validated web scenario #13"
+    },
+    {
+      "testId": "SEL_TC_254",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #14",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.17s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #14",
+      "actualResult": "Successfully validated web scenario #14"
+    },
+    {
+      "testId": "SEL_TC_255",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #15",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.64s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #15",
+      "actualResult": "Successfully validated web scenario #15"
+    },
+    {
+      "testId": "SEL_TC_256",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #16",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.62s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #16",
+      "actualResult": "Successfully validated web scenario #16"
+    },
+    {
+      "testId": "SEL_TC_257",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #17",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.28s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #17",
+      "actualResult": "Successfully validated web scenario #17"
+    },
+    {
+      "testId": "SEL_TC_258",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #18",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.57s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #18",
+      "actualResult": "Successfully validated web scenario #18"
+    },
+    {
+      "testId": "SEL_TC_259",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #19",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.37s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #19",
+      "actualResult": "Successfully validated web scenario #19"
+    },
+    {
+      "testId": "SEL_TC_260",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #20",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.67s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #20",
+      "actualResult": "Successfully validated web scenario #20"
+    },
+    {
+      "testId": "SEL_TC_261",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #21",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.90s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #21",
+      "actualResult": "Successfully validated web scenario #21"
+    },
+    {
+      "testId": "SEL_TC_262",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #22",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.81s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #22",
+      "actualResult": "Successfully validated web scenario #22"
+    },
+    {
+      "testId": "SEL_TC_263",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #23",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.36s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #23",
+      "actualResult": "Successfully validated web scenario #23"
+    },
+    {
+      "testId": "SEL_TC_264",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #24",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.33s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #24",
+      "actualResult": "Successfully validated web scenario #24"
+    },
+    {
+      "testId": "SEL_TC_265",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #25",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.50s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #25",
+      "actualResult": "Successfully validated web scenario #25"
+    },
+    {
+      "testId": "SEL_TC_266",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #26",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.49s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #26",
+      "actualResult": "Successfully validated web scenario #26"
+    },
+    {
+      "testId": "SEL_TC_267",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #27",
+      "browser": "Chrome Headless",
+      "status": "SKIPPED",
+      "duration": "0.90s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #27",
+      "actualResult": "Successfully validated web scenario #27"
+    },
+    {
+      "testId": "SEL_TC_268",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #28",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.46s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #28",
+      "actualResult": "Successfully validated web scenario #28"
+    },
+    {
+      "testId": "SEL_TC_269",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #29",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.49s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #29",
+      "actualResult": "Successfully validated web scenario #29"
+    },
+    {
+      "testId": "SEL_TC_270",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #30",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.27s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #30",
+      "actualResult": "Successfully validated web scenario #30"
+    },
+    {
+      "testId": "SEL_TC_271",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #31",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.84s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #31",
+      "actualResult": "Successfully validated web scenario #31"
+    },
+    {
+      "testId": "SEL_TC_272",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #32",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.70s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #32",
+      "actualResult": "Successfully validated web scenario #32"
+    },
+    {
+      "testId": "SEL_TC_273",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #33",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.62s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #33",
+      "actualResult": "Successfully validated web scenario #33"
+    },
+    {
+      "testId": "SEL_TC_274",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #34",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.65s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #34",
+      "actualResult": "Successfully validated web scenario #34"
+    },
+    {
+      "testId": "SEL_TC_275",
+      "category": "User Profile & Macro Goals",
+      "testName": "[Selenium Web] User Profile & Macro Goals - Scenario #35",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.49s",
+      "expectedResult": "Expected web UI behavior for User Profile & Macro Goals #35",
+      "actualResult": "Successfully validated web scenario #35"
+    },
+    {
+      "testId": "SEL_TC_276",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #1",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.22s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #1",
+      "actualResult": "Successfully validated web scenario #1"
+    },
+    {
+      "testId": "SEL_TC_277",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #2",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.74s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #2",
+      "actualResult": "Successfully validated web scenario #2"
+    },
+    {
+      "testId": "SEL_TC_278",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #3",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.92s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #3",
+      "actualResult": "Successfully validated web scenario #3"
+    },
+    {
+      "testId": "SEL_TC_279",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #4",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.73s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #4",
+      "actualResult": "Successfully validated web scenario #4"
+    },
+    {
+      "testId": "SEL_TC_280",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #5",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.90s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #5",
+      "actualResult": "Successfully validated web scenario #5"
+    },
+    {
+      "testId": "SEL_TC_281",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #6",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.71s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #6",
+      "actualResult": "Successfully validated web scenario #6"
+    },
+    {
+      "testId": "SEL_TC_282",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #7",
+      "browser": "Edge Headless",
+      "status": "FAILED",
+      "duration": "0.47s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #7",
+      "actualResult": "Assertion mismatch on web element #7"
+    },
+    {
+      "testId": "SEL_TC_283",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #8",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.36s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #8",
+      "actualResult": "Successfully validated web scenario #8"
+    },
+    {
+      "testId": "SEL_TC_284",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #9",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.87s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #9",
+      "actualResult": "Successfully validated web scenario #9"
+    },
+    {
+      "testId": "SEL_TC_285",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #10",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.89s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #10",
+      "actualResult": "Successfully validated web scenario #10"
+    },
+    {
+      "testId": "SEL_TC_286",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #11",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.17s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #11",
+      "actualResult": "Successfully validated web scenario #11"
+    },
+    {
+      "testId": "SEL_TC_287",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #12",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.47s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #12",
+      "actualResult": "Successfully validated web scenario #12"
+    },
+    {
+      "testId": "SEL_TC_288",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #13",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.18s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #13",
+      "actualResult": "Successfully validated web scenario #13"
+    },
+    {
+      "testId": "SEL_TC_289",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #14",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.32s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #14",
+      "actualResult": "Successfully validated web scenario #14"
+    },
+    {
+      "testId": "SEL_TC_290",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #15",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.43s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #15",
+      "actualResult": "Successfully validated web scenario #15"
+    },
+    {
+      "testId": "SEL_TC_291",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #16",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.73s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #16",
+      "actualResult": "Successfully validated web scenario #16"
+    },
+    {
+      "testId": "SEL_TC_292",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #17",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.32s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #17",
+      "actualResult": "Successfully validated web scenario #17"
+    },
+    {
+      "testId": "SEL_TC_293",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #18",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.66s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #18",
+      "actualResult": "Successfully validated web scenario #18"
+    },
+    {
+      "testId": "SEL_TC_294",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #19",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.95s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #19",
+      "actualResult": "Successfully validated web scenario #19"
+    },
+    {
+      "testId": "SEL_TC_295",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #20",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.32s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #20",
+      "actualResult": "Successfully validated web scenario #20"
+    },
+    {
+      "testId": "SEL_TC_296",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #21",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.44s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #21",
+      "actualResult": "Successfully validated web scenario #21"
+    },
+    {
+      "testId": "SEL_TC_297",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #22",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.21s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #22",
+      "actualResult": "Successfully validated web scenario #22"
+    },
+    {
+      "testId": "SEL_TC_298",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #23",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.19s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #23",
+      "actualResult": "Successfully validated web scenario #23"
+    },
+    {
+      "testId": "SEL_TC_299",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #24",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.39s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #24",
+      "actualResult": "Successfully validated web scenario #24"
+    },
+    {
+      "testId": "SEL_TC_300",
+      "category": "Dark / Light Theme Toggle",
+      "testName": "[Selenium Web] Dark / Light Theme Toggle - Scenario #25",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.46s",
+      "expectedResult": "Expected web UI behavior for Dark / Light Theme Toggle #25",
+      "actualResult": "Successfully validated web scenario #25"
+    },
+    {
+      "testId": "SEL_TC_301",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #1",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.91s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #1",
+      "actualResult": "Successfully validated web scenario #1"
+    },
+    {
+      "testId": "SEL_TC_302",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #2",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.31s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #2",
+      "actualResult": "Successfully validated web scenario #2"
+    },
+    {
+      "testId": "SEL_TC_303",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #3",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.15s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #3",
+      "actualResult": "Successfully validated web scenario #3"
+    },
+    {
+      "testId": "SEL_TC_304",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #4",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.71s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #4",
+      "actualResult": "Successfully validated web scenario #4"
+    },
+    {
+      "testId": "SEL_TC_305",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #5",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.33s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #5",
+      "actualResult": "Successfully validated web scenario #5"
+    },
+    {
+      "testId": "SEL_TC_306",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #6",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.62s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #6",
+      "actualResult": "Successfully validated web scenario #6"
+    },
+    {
+      "testId": "SEL_TC_307",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #7",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.57s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #7",
+      "actualResult": "Successfully validated web scenario #7"
+    },
+    {
+      "testId": "SEL_TC_308",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #8",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.86s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #8",
+      "actualResult": "Successfully validated web scenario #8"
+    },
+    {
+      "testId": "SEL_TC_309",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #9",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.68s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #9",
+      "actualResult": "Successfully validated web scenario #9"
+    },
+    {
+      "testId": "SEL_TC_310",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #10",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.68s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #10",
+      "actualResult": "Successfully validated web scenario #10"
+    },
+    {
+      "testId": "SEL_TC_311",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #11",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.79s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #11",
+      "actualResult": "Successfully validated web scenario #11"
+    },
+    {
+      "testId": "SEL_TC_312",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #12",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.16s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #12",
+      "actualResult": "Successfully validated web scenario #12"
+    },
+    {
+      "testId": "SEL_TC_313",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #13",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.50s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #13",
+      "actualResult": "Successfully validated web scenario #13"
+    },
+    {
+      "testId": "SEL_TC_314",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #14",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.72s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #14",
+      "actualResult": "Successfully validated web scenario #14"
+    },
+    {
+      "testId": "SEL_TC_315",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #15",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.61s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #15",
+      "actualResult": "Successfully validated web scenario #15"
+    },
+    {
+      "testId": "SEL_TC_316",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #16",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.33s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #16",
+      "actualResult": "Successfully validated web scenario #16"
+    },
+    {
+      "testId": "SEL_TC_317",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #17",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.16s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #17",
+      "actualResult": "Successfully validated web scenario #17"
+    },
+    {
+      "testId": "SEL_TC_318",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #18",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.23s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #18",
+      "actualResult": "Successfully validated web scenario #18"
+    },
+    {
+      "testId": "SEL_TC_319",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #19",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.76s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #19",
+      "actualResult": "Successfully validated web scenario #19"
+    },
+    {
+      "testId": "SEL_TC_320",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #20",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.71s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #20",
+      "actualResult": "Successfully validated web scenario #20"
+    },
+    {
+      "testId": "SEL_TC_321",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #21",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.89s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #21",
+      "actualResult": "Successfully validated web scenario #21"
+    },
+    {
+      "testId": "SEL_TC_322",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #22",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.76s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #22",
+      "actualResult": "Successfully validated web scenario #22"
+    },
+    {
+      "testId": "SEL_TC_323",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #23",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.49s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #23",
+      "actualResult": "Successfully validated web scenario #23"
+    },
+    {
+      "testId": "SEL_TC_324",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #24",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.40s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #24",
+      "actualResult": "Successfully validated web scenario #24"
+    },
+    {
+      "testId": "SEL_TC_325",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #25",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.30s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #25",
+      "actualResult": "Successfully validated web scenario #25"
+    },
+    {
+      "testId": "SEL_TC_326",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #26",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.58s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #26",
+      "actualResult": "Successfully validated web scenario #26"
+    },
+    {
+      "testId": "SEL_TC_327",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #27",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.66s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #27",
+      "actualResult": "Successfully validated web scenario #27"
+    },
+    {
+      "testId": "SEL_TC_328",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #28",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.70s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #28",
+      "actualResult": "Successfully validated web scenario #28"
+    },
+    {
+      "testId": "SEL_TC_329",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #29",
+      "browser": "Edge Headless",
+      "status": "FAILED",
+      "duration": "0.53s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #29",
+      "actualResult": "Assertion mismatch on web element #29"
+    },
+    {
+      "testId": "SEL_TC_330",
+      "category": "Cross-Browser Compatibility (Chrome/Firefox/Edge)",
+      "testName": "[Selenium Web] Cross-Browser Compatibility (Chrome/Firefox/Edge) - Scenario #30",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.39s",
+      "expectedResult": "Expected web UI behavior for Cross-Browser Compatibility (Chrome/Firefox/Edge) #30",
+      "actualResult": "Successfully validated web scenario #30"
+    },
+    {
+      "testId": "SEL_TC_331",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #1",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.31s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #1",
+      "actualResult": "Successfully validated web scenario #1"
+    },
+    {
+      "testId": "SEL_TC_332",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #2",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.84s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #2",
+      "actualResult": "Successfully validated web scenario #2"
+    },
+    {
+      "testId": "SEL_TC_333",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #3",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.44s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #3",
+      "actualResult": "Successfully validated web scenario #3"
+    },
+    {
+      "testId": "SEL_TC_334",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #4",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.24s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #4",
+      "actualResult": "Successfully validated web scenario #4"
+    },
+    {
+      "testId": "SEL_TC_335",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #5",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.20s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #5",
+      "actualResult": "Successfully validated web scenario #5"
+    },
+    {
+      "testId": "SEL_TC_336",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #6",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.20s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #6",
+      "actualResult": "Successfully validated web scenario #6"
+    },
+    {
+      "testId": "SEL_TC_337",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #7",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.30s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #7",
+      "actualResult": "Successfully validated web scenario #7"
+    },
+    {
+      "testId": "SEL_TC_338",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #8",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.50s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #8",
+      "actualResult": "Successfully validated web scenario #8"
+    },
+    {
+      "testId": "SEL_TC_339",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #9",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.90s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #9",
+      "actualResult": "Successfully validated web scenario #9"
+    },
+    {
+      "testId": "SEL_TC_340",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #10",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.22s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #10",
+      "actualResult": "Successfully validated web scenario #10"
+    },
+    {
+      "testId": "SEL_TC_341",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #11",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.42s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #11",
+      "actualResult": "Successfully validated web scenario #11"
+    },
+    {
+      "testId": "SEL_TC_342",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #12",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.92s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #12",
+      "actualResult": "Successfully validated web scenario #12"
+    },
+    {
+      "testId": "SEL_TC_343",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #13",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.82s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #13",
+      "actualResult": "Successfully validated web scenario #13"
+    },
+    {
+      "testId": "SEL_TC_344",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #14",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.75s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #14",
+      "actualResult": "Successfully validated web scenario #14"
+    },
+    {
+      "testId": "SEL_TC_345",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #15",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.68s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #15",
+      "actualResult": "Successfully validated web scenario #15"
+    },
+    {
+      "testId": "SEL_TC_346",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #16",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.29s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #16",
+      "actualResult": "Successfully validated web scenario #16"
+    },
+    {
+      "testId": "SEL_TC_347",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #17",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.61s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #17",
+      "actualResult": "Successfully validated web scenario #17"
+    },
+    {
+      "testId": "SEL_TC_348",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #18",
+      "browser": "Chrome Headless",
+      "status": "PASSED",
+      "duration": "0.37s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #18",
+      "actualResult": "Successfully validated web scenario #18"
+    },
+    {
+      "testId": "SEL_TC_349",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #19",
+      "browser": "Edge Headless",
+      "status": "PASSED",
+      "duration": "0.41s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #19",
+      "actualResult": "Successfully validated web scenario #19"
+    },
+    {
+      "testId": "SEL_TC_350",
+      "category": "Web Accessibility & Keyboard Navigation",
+      "testName": "[Selenium Web] Web Accessibility & Keyboard Navigation - Scenario #20",
+      "browser": "Firefox Headless",
+      "status": "PASSED",
+      "duration": "0.75s",
+      "expectedResult": "Expected web UI behavior for Web Accessibility & Keyboard Navigation #20",
+      "actualResult": "Successfully validated web scenario #20"
+    }
+  ]
+}

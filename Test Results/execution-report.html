@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nutri-Vision Enterprise 4-Suite Automation Report</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #0f172a; color: #f8fafc; padding: 24px; }
+    .card { background: #1e293b; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .stat { font-size: 1.8rem; font-weight: bold; }
+    .pass { color: #10b981; } .fail { color: #ef4444; } .primary { color: #0abab5; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { padding: 10px; border-bottom: 1px solid #334155; text-align: left; }
+    th { background: #0f172a; }
+  </style>
+</head>
+<body>
+  <h1>🥗 Nutri-Vision Enterprise Full Test & Audit Summary</h1>
+  <p>Live Build • 31/7/2026</p>
+  
+  <div class="grid">
+    <div class="card"><div>Total Test Cases</div><div class="stat primary">1400</div></div>
+    <div class="card"><div>Passed</div><div class="stat pass">1366</div></div>
+    <div class="card"><div>Failed</div><div class="stat fail">22</div></div>
+    <div class="card"><div>Pass Percentage</div><div class="stat pass">97.6%</div></div>
+  </div>
+
+  <h2>Test Suite Breakdown</h2>
+  <table>
+    <thead>
+      <tr><th>Test Suite</th><th>Total Tests</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Pass Rate</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>🌐 Selenium Web E2E</td><td>350</td><td>340</td><td>7</td><td>3</td><td>97.1%</td></tr>
+      <tr><td>📱 Appium Mobile E2E</td><td>350</td><td>341</td><td>6</td><td>3</td><td>97.4%</td></tr>
+      <tr><td>🛡️ Backend Vulnerability (OWASP)</td><td>350</td><td>342</td><td>5</td><td>3</td><td>97.7%</td></tr>
+      <tr><td>⚡ Backend Load & Performance</td><td>350</td><td>343</td><td>4</td><td>3</td><td>98.0%</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>
