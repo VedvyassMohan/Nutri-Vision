@@ -1,0 +1,40 @@
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.page-content {
+  flex: 1;
+  padding-bottom: 80px;
+  overflow-y: auto;
+  /* Prevent layout shift during transitions */
+  position: relative;
+}
+
+/* ===== Smooth Page Transitions ===== */
+.page-transition {
+  will-change: opacity, transform;
+}
+
+/* Page fades out quickly */
+.page-exit {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.12s ease, transform 0.12s ease;
+  pointer-events: none;
+}
+
+/* New page starts invisible and slightly below */
+.page-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+/* New page fades in smoothly */
+.page-enter-done {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}

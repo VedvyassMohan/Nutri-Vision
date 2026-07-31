@@ -1,0 +1,177 @@
+/* ===== CSS Reset & Design Tokens ===== */
+:root {
+  --primary: #0abab5;
+  --primary-light: #e0f7f6;
+  --primary-dark: #089e9a;
+  --accent-orange: #ff6b35;
+  --accent-blue: #4a90d9;
+  --bg: #f4f6f8;
+  --card-bg: #ffffff;
+  --text-primary: #1a1d26;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --border: #e5e7eb;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.1);
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --streak-bg: linear-gradient(135deg, #e0f7f6 0%, #f0fffe 100%);
+  --streak-border: rgba(10, 186, 181, 0.12);
+  --water-bg: linear-gradient(135deg, #ddf3fa 0%, #e8f9fd 100%);
+  --input-bg: #f8fafd;
+  --auth-gradient: linear-gradient(135deg, var(--bg) 0%, #e0f7f6 100%);
+  --error-bg: #fff5f5;
+  --error-text: #e53e3e;
+}
+
+[data-theme='dark'] {
+  --bg: #000000;
+  --card-bg: #0a0a0a;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-muted: #4b5563;
+  --border: #1a1a1a;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.8);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.9);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,1);
+  --primary-light: rgba(10, 186, 181, 0.1);
+  --streak-bg: linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+  --streak-border: #0f172a;
+  --water-bg: linear-gradient(135deg, #082f49 0%, #0c4a6e 100%);
+  --input-bg: #050505;
+  --auth-gradient: linear-gradient(135deg, #000000 0%, #0f172a 100%);
+  --error-bg: #2d1616;
+  --error-text: #fc8181;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  background: var(--bg);
+  position: relative;
+  overflow-x: hidden;
+  padding-bottom: 80px;
+  transition: max-width 0.3s ease, padding 0.3s ease;
+}
+
+/* ===== Web-only desktop layout (not applied in native APK) ===== */
+[data-platform="web"] #root {
+  max-width: 1200px;
+  padding-top: 85px;
+  padding-bottom: 40px;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-fade-in { animation: fadeInUp 0.5s ease forwards; }
+.animate-scale-in { animation: scaleIn 0.4s ease forwards; }
+.animate-slide-in { animation: slideInRight 0.4s ease forwards; }
+
+/* Stagger children */
+.stagger > *:nth-child(1) { animation-delay: 0s; }
+.stagger > *:nth-child(2) { animation-delay: 0.08s; }
+.stagger > *:nth-child(3) { animation-delay: 0.16s; }
+.stagger > *:nth-child(4) { animation-delay: 0.24s; }
+.stagger > *:nth-child(5) { animation-delay: 0.32s; }
+
+/* ===== Common Components ===== */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-md);
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+/* Toggle Button */
+.toggle {
+  width: 48px;
+  height: 26px;
+  border-radius: 13px;
+  border: none;
+  background: #ccc;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  padding: 0;
+}
+
+.toggle.on {
+  background: var(--primary);
+}
+
+.toggle-knob {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+.toggle.on .toggle-knob {
+  transform: translateX(22px);
+}

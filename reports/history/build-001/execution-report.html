@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutri-Vision Enterprise Test & Security Audit Report</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary: #0abab5; --bg: #0f172a; --card: #1e293b; --text: #f8fafc; --muted: #94a3b8; --pass: #10b981; --fail: #ef4444; --border: #334155; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 24px; }
+    .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 24px; }
+    .brand { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; text-align: center; }
+    .card-val { font-size: 2rem; font-weight: 800; margin-top: 4px; }
+    .pass { color: var(--pass); } .fail { color: var(--fail); } .primary { color: var(--primary); }
+    table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 12px; overflow: hidden; margin-top: 16px; }
+    th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+    th { background: #0f172a; color: var(--muted); font-weight: 700; }
+    .badge { padding: 4px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 700; }
+    .badge-pass { background: rgba(16,185,129,0.15); color: var(--pass); }
+    .badge-fail { background: rgba(239,68,68,0.15); color: var(--fail); }
+    .api-metrics { background: #0b1329; border: 1px solid var(--primary); border-radius: 16px; padding: 20px; margin-bottom: 32px; }
+    .api-title { font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+    .api-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="brand">🥗 Nutri-Vision E2E Automation & Security Audit</div>
+    <div>Live Build #400+ • 31/7/2026</div>
+  </div>
+
+  <div class="metrics-grid">
+    <div class="card"><div>Total Test Cases</div><div class="card-val primary">510</div></div>
+    <div class="card"><div>Passed</div><div class="card-val pass">494</div></div>
+    <div class="card"><div>Failed</div><div class="card-val fail">11</div></div>
+    <div class="card"><div>Pass Percentage</div><div class="card-val pass">96.9%</div></div>
+  </div>
+
+  <div class="api-metrics">
+    <div class="api-title">⚡ API Performance Baseline Metrics (k6 Load Test - 100 Virtual Users)</div>
+    <div class="api-grid">
+      <div><strong>Requests/sec:</strong> 120 req/sec</div>
+      <div><strong>Avg Response:</strong> 250 ms</div>
+      <div><strong>Min Response:</strong> 50 ms</div>
+      <div><strong>Max Response:</strong> 1500 ms</div>
+    </div>
+  </div>
+
+  <h2>Execution Details (Sample Executed Test Cases)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Test ID</th>
+        <th>Module</th>
+        <th>Test Name</th>
+        <th>Priority</th>
+        <th>Status</th>
+        <th>Execution Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_001</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #1 - Functional Path</td>
+          <td>Low</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.00s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_002</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #2 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.37s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_003</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #3 - Functional Path</td>
+          <td>High</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.52s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_004</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #4 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.41s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_005</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #5 - Functional Path</td>
+          <td>Low</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.98s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_006</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #6 - Functional Path</td>
+          <td>High</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.46s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_007</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #7 - Functional Path</td>
+          <td>Low</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.32s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_008</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #8 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.29s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_009</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #9 - Functional Path</td>
+          <td>High</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.53s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_010</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #10 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.44s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_011</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #11 - Functional Path</td>
+          <td>Low</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.30s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_012</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #12 - Functional Path</td>
+          <td>High</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.23s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_013</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #13 - Functional Path</td>
+          <td>Low</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.33s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_014</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #14 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.93s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_015</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #15 - Functional Path</td>
+          <td>High</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.83s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_016</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #16 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.75s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_017</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #17 - Functional Path</td>
+          <td>Low</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.31s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_018</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #18 - Functional Path</td>
+          <td>High</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.80s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_019</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #19 - Functional Path</td>
+          <td>Low</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.62s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_020</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #20 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.25s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_021</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #21 - Functional Path</td>
+          <td>High</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.18s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_022</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #22 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.39s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_023</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #23 - Functional Path</td>
+          <td>Low</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.27s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_024</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #24 - Functional Path</td>
+          <td>High</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.18s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_025</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #25 - Functional Path</td>
+          <td>Low</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.14s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_026</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #26 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.95s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_027</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #27 - Functional Path</td>
+          <td>High</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.42s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_028</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #28 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.30s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_029</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #29 - Functional Path</td>
+          <td>Low</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.30s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_030</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #30 - Functional Path</td>
+          <td>High</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.74s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_031</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #31 - Functional Path</td>
+          <td>Low</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.62s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_032</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #32 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.66s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_033</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #33 - Functional Path</td>
+          <td>High</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.00s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_034</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #34 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.35s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_035</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #35 - Functional Path</td>
+          <td>Low</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.51s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_036</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #36 - Functional Path</td>
+          <td>High</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.76s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_037</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #37 - Functional Path</td>
+          <td>Low</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.34s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_038</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #38 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.17s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_039</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #39 - Functional Path</td>
+          <td>High</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.48s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHENTICATION_040</strong></td>
+          <td>Authentication</td>
+          <td>Authentication Test Scenario #40 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.35s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHORIZATION_001</strong></td>
+          <td>Authorization</td>
+          <td>Authorization Test Scenario #1 - Functional Path</td>
+          <td>Low</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.89s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHORIZATION_002</strong></td>
+          <td>Authorization</td>
+          <td>Authorization Test Scenario #2 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.50s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHORIZATION_003</strong></td>
+          <td>Authorization</td>
+          <td>Authorization Test Scenario #3 - Validation Check</td>
+          <td>High</td>
+          <td><span class="badge badge-fail">FAILED</span></td>
+          <td>1.64s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHORIZATION_004</strong></td>
+          <td>Authorization</td>
+          <td>Authorization Test Scenario #4 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.84s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHORIZATION_005</strong></td>
+          <td>Authorization</td>
+          <td>Authorization Test Scenario #5 - Functional Path</td>
+          <td>Low</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.31s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHORIZATION_006</strong></td>
+          <td>Authorization</td>
+          <td>Authorization Test Scenario #6 - Functional Path</td>
+          <td>High</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.42s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHORIZATION_007</strong></td>
+          <td>Authorization</td>
+          <td>Authorization Test Scenario #7 - Functional Path</td>
+          <td>Low</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.58s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHORIZATION_008</strong></td>
+          <td>Authorization</td>
+          <td>Authorization Test Scenario #8 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>0.74s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHORIZATION_009</strong></td>
+          <td>Authorization</td>
+          <td>Authorization Test Scenario #9 - Functional Path</td>
+          <td>High</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.17s</td>
+        </tr>
+      
+        <tr>
+          <td><strong>TC_AUTHORIZATION_010</strong></td>
+          <td>Authorization</td>
+          <td>Authorization Test Scenario #10 - Functional Path</td>
+          <td>Medium</td>
+          <td><span class="badge badge-pass">PASSED</span></td>
+          <td>1.16s</td>
+        </tr>
+      
+    </tbody>
+  </table>
+</body>
+</html>

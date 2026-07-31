@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Large Datasets (Raw images)
+FINAL FOOD DATASET/
+stock_analysis/
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+android/app/build/
+android/build/
+android/.gradle/
+android/local.properties
+android-sdk/
+
+# Environment & local settings
+*.env
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+.DS_Store
+Thumbs.db
+
+# Executables & Binaries
+*.apk
+*.aab
+nutri-vision.apk
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database & Cache
+server/nutrivision.db
+.cache/
+.vite/
+
+# Python cache & models
+__pycache__/
+*.pyc
+*.h5
+*.keras
+
+# IDE & Editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
