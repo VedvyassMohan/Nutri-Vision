@@ -55,7 +55,7 @@ jobs:
 
       - name: 📦 Stage 4b — Install JS Dependencies
         working-directory: expo-app
-        run: npm ci --legacy-peer-deps
+        run: npm install --legacy-peer-deps
 
       - name: 📦 Stage 4c — Create assets directory
         run: mkdir -p expo-app/android/app/src/main/assets
