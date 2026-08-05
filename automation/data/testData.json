@@ -1,0 +1,70 @@
+{
+  "users": {
+    "validUsers": [
+      { "email": "testuser1@nutrivision.com", "password": "Test@1234", "name": "Test User 1" },
+      { "email": "testuser2@nutrivision.com", "password": "Test@5678", "name": "Test User 2" },
+      { "email": "admin@nutrivision.com", "password": "Admin@9999", "name": "Admin User" }
+    ],
+    "invalidUsers": [
+      { "email": "wrong@email.com", "password": "WrongPass", "reason": "Invalid credentials" },
+      { "email": "", "password": "Test@1234", "reason": "Empty email" },
+      { "email": "testuser1@nutrivision.com", "password": "", "reason": "Empty password" },
+      { "email": "notanemail", "password": "Test@1234", "reason": "Invalid email format" },
+      { "email": "a@b.c", "password": "short", "reason": "Short password" }
+    ],
+    "newUsers": [
+      { "email": "newuser1@nutrivision.com", "password": "New@1234", "name": "New User 1", "age": 25, "weight": 70, "height": 175, "goal": "Weight Loss" },
+      { "email": "newuser2@nutrivision.com", "password": "New@5678", "name": "New User 2", "age": 30, "weight": 80, "height": 180, "goal": "Muscle Gain" },
+      { "email": "newuser3@nutrivision.com", "password": "New@9012", "name": "New User 3", "age": 22, "weight": 55, "height": 160, "goal": "Maintain Weight" }
+    ]
+  },
+  "meals": [
+    { "name": "Biryani", "emoji": "🍛", "cal": 450, "protein": 22, "carbs": 55, "fat": 18, "category": "Indian", "portion": "1x", "description": "200g of biryani" },
+    { "name": "Chapati", "emoji": "🫓", "cal": 104, "protein": 3, "carbs": 18, "fat": 3, "category": "Indian", "portion": "2x", "description": "2 chapati with ghee" },
+    { "name": "Dal Makhani", "emoji": "🥣", "cal": 220, "protein": 10, "carbs": 28, "fat": 8, "category": "Indian", "portion": "1x", "description": "1 bowl dal makhani" },
+    { "name": "Butter Chicken", "emoji": "🍗", "cal": 320, "protein": 28, "carbs": 12, "fat": 18, "category": "Indian", "portion": "1x", "description": "1 serving butter chicken" },
+    { "name": "Palak Paneer", "emoji": "🥘", "cal": 280, "protein": 15, "carbs": 14, "fat": 18, "category": "Indian", "portion": "1x", "description": "palak paneer 1 bowl" },
+    { "name": "Dosa", "emoji": "🥞", "cal": 160, "protein": 4, "carbs": 28, "fat": 5, "category": "South Indian", "portion": "1x", "description": "1 plain dosa" },
+    { "name": "Idli", "emoji": "🍚", "cal": 58, "protein": 2, "carbs": 12, "fat": 0.5, "category": "South Indian", "portion": "3x", "description": "3 idlis with sambar" },
+    { "name": "Gulab Jamun", "emoji": "🍮", "cal": 150, "protein": 2, "carbs": 30, "fat": 4, "category": "Dessert", "portion": "2x", "description": "2 gulab jamun" },
+    { "name": "Aloo Gobi", "emoji": "🥘", "cal": 290, "protein": 14, "carbs": 28, "fat": 12, "category": "Indian", "portion": "1x", "description": "aloo gobi with less oil" },
+    { "name": "Naan", "emoji": "🫓", "cal": 262, "protein": 9, "carbs": 45, "fat": 5, "category": "Indian", "portion": "1x", "description": "1 naan with butter" }
+  ],
+  "invalidMeals": [
+    { "name": "", "reason": "Empty meal name" },
+    { "name": "   ", "reason": "Whitespace only" },
+    { "name": "a".repeat(300), "reason": "Exceeds max length" }
+  ],
+  "searchQueries": {
+    "valid": ["chapati", "biryani", "dal", "paneer", "chicken", "dosa", "idli", "naan", "rice", "sambar"],
+    "partial": ["chap", "bir", "pan", "chic", "dos"],
+    "noResults": ["xyz123", "fakefood999", "zzznomatch"],
+    "special": ["dal makhani", "butter chicken", "palak paneer", "aloo gobi"]
+  },
+  "profileData": {
+    "valid": [
+      { "name": "Updated Name 1", "age": 28, "weight": 72, "height": 176, "goal": "Weight Loss" },
+      { "name": "Updated Name 2", "age": 35, "weight": 90, "height": 182, "goal": "Muscle Gain" }
+    ],
+    "invalid": [
+      { "name": "", "reason": "Empty name" },
+      { "age": -5, "reason": "Negative age" },
+      { "weight": 0, "reason": "Zero weight" },
+      { "weight": 999, "reason": "Unrealistic weight" },
+      { "height": 20, "reason": "Too short height" }
+    ]
+  },
+  "calorieGoals": [1500, 1800, 2000, 2200, 2500],
+  "mealTypes": ["Breakfast", "Lunch", "Dinner", "Snacks"],
+  "portions": ["0.5x", "1x", "1.5x", "2x"],
+  "notifications": {
+    "types": ["Meal Reminder", "Goal Achievement", "Weekly Summary", "Hydration Reminder"],
+    "times": ["07:00", "12:00", "18:00", "21:00"]
+  },
+  "accessibilityChecks": [
+    { "element": "Add Meal Button", "minTouchTarget": 44, "hasLabel": true },
+    { "element": "Navigation Bar", "minTouchTarget": 48, "hasLabel": true },
+    { "element": "Search Input", "minTouchTarget": 44, "hasLabel": true },
+    { "element": "Submit Button", "minTouchTarget": 48, "hasLabel": true }
+  ]
+}

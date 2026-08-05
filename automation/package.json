@@ -1,0 +1,40 @@
+{
+  "name": "nutrivision-automation",
+  "version": "1.0.0",
+  "description": "Nutri-Vision Android E2E Automation Framework",
+  "main": "config/wdio.conf.ts",
+  "scripts": {
+    "test": "wdio run config/wdio.conf.ts",
+    "test:auth": "wdio run config/wdio.conf.ts --spec tests/auth/auth.spec.ts",
+    "test:meals": "wdio run config/wdio.conf.ts --spec tests/meals/meals.spec.ts",
+    "test:profile": "wdio run config/wdio.conf.ts --spec tests/profile/profile.spec.ts",
+    "test:navigation": "wdio run config/wdio.conf.ts --spec tests/navigation/navigation.spec.ts",
+    "test:validation": "wdio run config/wdio.conf.ts --spec tests/validation/validation.spec.ts",
+    "test:accessibility": "wdio run config/wdio.conf.ts --spec tests/accessibility/accessibility.spec.ts",
+    "test:regression": "wdio run config/wdio.conf.ts --spec tests/regression/regression.spec.ts",
+    "report:excel": "ts-node reporters/ExcelReporter.ts",
+    "report:html": "ts-node reporters/HtmlReporter.ts",
+    "report:all": "npm run report:excel && npm run report:html",
+    "report:allure": "allure generate reports/allure-results --clean -o reports/allure-report && allure open reports/allure-report"
+  },
+  "dependencies": {
+    "@wdio/appium-service": "^8.40.0",
+    "@wdio/cli": "^8.40.0",
+    "@wdio/globals": "^8.40.0",
+    "@wdio/local-runner": "^8.40.0",
+    "@wdio/mocha-framework": "^8.40.0",
+    "@wdio/spec-reporter": "^8.40.0",
+    "@wdio/allure-reporter": "^8.40.0",
+    "@wdio/junit-reporter": "^8.40.0",
+    "allure-commandline": "^2.30.0",
+    "exceljs": "^4.4.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "webdriverio": "^8.40.0",
+    "appium": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/mocha": "^10.0.0"
+  }
+}
