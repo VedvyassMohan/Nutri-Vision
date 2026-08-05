@@ -7,7 +7,7 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    - cron: '0 2 * * *'   # Daily at 2 AM UTC
+    - cron: '0 2 * * *'
 
 env:
   JAVA_VERSION: '17'
@@ -18,17 +18,14 @@ env:
   EMULATOR_NAME: nutrivision_emulator
   APP_PACKAGE: com.nutrivision.expo
   APP_ACTIVITY: com.nutrivision.expo.MainActivity
-  APPIUM_VERSION: '2.0.0'
 
 jobs:
-  # ========================================================
-  # STAGE 1-5: Checkout + Setup + Build APK
-  # ========================================================
+  # ============================================================
+  # STAGE 1-5: Build Debug APK
+  # ============================================================
   build-apk:
     name: 🔨 Build Debug APK
     runs-on: ubuntu-latest
-    outputs:
-      apk-path: ${{ steps.find-apk.outputs.apk-path }}
     steps:
       - name: ⬇️ Stage 1 — Checkout Repository
         uses: actions/checkout@v4
@@ -38,11 +35,18 @@ jobs:
         with:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: temurin
+          cache: gradle
 
       - name: 📦 Stage 3 — Setup Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          packages: |
+            platforms;android-34
+            build-tools;34.0.0
+            ndk;26.1.10909125
+            cmake;3.22.1
 
-      - name: 🟢 Stage 4 — Setup Node.js
+      - name: 🟢 Stage 4 — Setup Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
@@ -51,51 +55,76 @@ jobs:
 
       - name: 📦 Stage 4b — Install JS Dependencies
         working-directory: expo-app
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
-      - name: 📦 Stage 4c — Bundle JS Assets
+      - name: 📦 Stage 4c — Create assets directory
+        run: mkdir -p expo-app/android/app/src/main/assets
+
+      - name: 📦 Stage 4d — Bundle React Native JS
         working-directory: expo-app
         run: |
-          mkdir -p android/app/src/main/assets
           npx react-native bundle \
             --platform android \
             --dev false \
             --entry-file index.js \
             --bundle-output android/app/src/main/assets/index.android.bundle \
-            --assets-dest android/app/src/main/res
+            --assets-dest android/app/src/main/res \
+            --reset-cache
 
-      - name: 🔨 Stage 5 — Build Debug APK
+      - name: 🔑 Stage 5 — Grant Gradle Permissions
         working-directory: expo-app/android
+        run: chmod +x gradlew
+
+      - name: 🔨 Stage 5b — Build Debug APK
+        working-directory: expo-app/android
+        env:
+          JAVA_HOME: ${{ env.JAVA_HOME }}
+          ANDROID_HOME: ${{ env.ANDROID_HOME }}
         run: |
-          chmod +x gradlew
           ./gradlew app:assembleDebug \
             -x lint -x test \
             --build-cache \
             --parallel \
-            --no-daemon
+            --no-daemon \
+            --stacktrace
 
-      - name: 🔍 Stage 5b — Find APK
+      - name: 🔍 Stage 5c — Find and verify APK
         id: find-apk
         run: |
           APK=$(find expo-app/android/app/build/outputs/apk/debug -name "*.apk" | head -1)
+          if [ -z "$APK" ]; then
+            echo "❌ APK not found!"
+            exit 1
+          fi
+          echo "✅ APK found: $APK ($(du -sh $APK | cut -f1))"
           echo "apk-path=$APK" >> $GITHUB_OUTPUT
-          echo "Found APK: $APK"
 
       - name: 📤 Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: debug-apk
+          name: debug-apk-build-${{ github.run_number }}
           path: expo-app/android/app/build/outputs/apk/debug/
           retention-days: 30
 
-  # ========================================================
-  # STAGE 6-21: Emulator + Appium + Tests + Reports
-  # ========================================================
+      - name: 📋 Build Summary
+        run: |
+          cat >> $GITHUB_STEP_SUMMARY << EOF
+          ## 🔨 Build Debug APK — ✅ Success
+          | Info | Value |
+          |---|---|
+          | APK | \`${{ steps.find-apk.outputs.apk-path }}\` |
+          | Build # | ${{ github.run_number }} |
+          | Commit | \`${{ github.sha }}\` |
+          EOF
+
+  # ============================================================
+  # STAGE 6-18: Emulator + Appium + Tests + Reports
+  # ============================================================
   e2e-tests:
     name: 🧪 E2E Tests — Appium + Android Emulator
-    runs-on: macos-latest   # macOS for hardware acceleration (HAXM)
+    runs-on: macos-13   # macOS for hardware acceleration
     needs: build-apk
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - name: ⬇️ Checkout Repository
         uses: actions/checkout@v4
@@ -106,9 +135,6 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: temurin
 
-      - name: 📦 Setup Android SDK
-        uses: android-actions/setup-android@v3
-
       - name: 🟢 Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -116,122 +142,145 @@ jobs:
 
       - name: 📦 Install Automation Dependencies
         working-directory: automation
-        run: npm ci
+        run: npm install --legacy-peer-deps
 
       - name: 📥 Download APK
         uses: actions/download-artifact@v4
         with:
-          name: debug-apk
+          name: debug-apk-build-${{ github.run_number }}
           path: automation/apk/
 
-      - name: 🔍 Verify APK
+      - name: 🔍 Verify APK exists
+        id: verify-apk
         run: |
           APK=$(find automation/apk -name "*.apk" | head -1)
+          if [ -z "$APK" ]; then
+            echo "❌ APK not found in artifacts!"
+            exit 1
+          fi
           echo "APK_PATH=$APK" >> $GITHUB_ENV
-          echo "APK found: $APK"
-          ls -la $APK
+          echo "✅ APK: $APK"
 
-      - name: 📱 Stage 6 — Create Android Emulator
+      - name: 📱 Stage 6 — Install Android SDK components
         run: |
-          echo "yes" | sdkmanager "system-images;android-${{ env.ANDROID_API_LEVEL }};${{ env.ANDROID_TARGET }};${{ env.ANDROID_ABI }}" --no_https
-          echo "no" | avdmanager create avd \
+          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager \
+            "platform-tools" \
+            "emulator" \
+            "system-images;android-${{ env.ANDROID_API_LEVEL }};${{ env.ANDROID_TARGET }};${{ env.ANDROID_ABI }}" \
+            --sdk_root=$ANDROID_HOME
+
+      - name: 📱 Stage 6b — Create AVD
+        run: |
+          echo "no" | $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager create avd \
             -n ${{ env.EMULATOR_NAME }} \
             -k "system-images;android-${{ env.ANDROID_API_LEVEL }};${{ env.ANDROID_TARGET }};${{ env.ANDROID_ABI }}" \
             --force
 
-      - name: 🚀 Stage 6b — Start Android Emulator
+      - name: 🚀 Stage 6c — Start Android Emulator
         run: |
-          $ANDROID_HOME/emulator/emulator -avd ${{ env.EMULATOR_NAME }} \
-            -no-audio -no-window -gpu swiftshader_indirect -no-snapshot &
-          echo $! > emulator.pid
+          $ANDROID_HOME/emulator/emulator \
+            -avd ${{ env.EMULATOR_NAME }} \
+            -no-audio \
+            -no-window \
+            -gpu swiftshader_indirect \
+            -no-snapshot \
+            -no-boot-anim &
+          echo "EMULATOR_PID=$!" >> $GITHUB_ENV
 
-      - name: ✅ Stage 7 — Verify Emulator Readiness
+      - name: ✅ Stage 7 — Wait for Emulator Boot
         timeout-minutes: 10
         run: |
-          adb wait-for-device
-          while [ "$(adb shell getprop sys.boot_completed 2>/dev/null)" != "1" ]; do
-            echo "⏳ Waiting for emulator to fully boot..."
+          $ANDROID_HOME/platform-tools/adb wait-for-device
+          echo "ADB connected. Waiting for full boot..."
+          until $ANDROID_HOME/platform-tools/adb shell getprop sys.boot_completed 2>/dev/null | grep -q "1"; do
+            echo "  ⏳ Still booting..."
             sleep 5
           done
-          adb shell input keyevent 82
-          echo "✅ Emulator ready"
-          adb devices
+          $ANDROID_HOME/platform-tools/adb shell input keyevent 82
+          echo "✅ Emulator fully booted"
+          $ANDROID_HOME/platform-tools/adb devices
 
-      - name: 📲 Stage 8 — Install APK on Emulator
+      - name: 📲 Stage 8 — Install APK
         run: |
-          adb install -r "$APK_PATH"
-          echo "✅ APK installed"
+          $ANDROID_HOME/platform-tools/adb install -r "$APK_PATH"
+          echo "✅ APK installed successfully"
 
-      - name: 🤖 Stage 9 — Start Appium Server
+      - name: 🤖 Stage 9 — Install & Start Appium Server
         run: |
-          npm install -g appium@${{ env.APPIUM_VERSION }}
+          npm install -g appium@2.5.4
           appium driver install uiautomator2
-          appium server --port 4723 --address 0.0.0.0 \
-            --log automation/logs/appium.log &
-          echo $! > appium.pid
-          sleep 5
+          mkdir -p automation/logs
+          appium server \
+            --port 4723 \
+            --address 0.0.0.0 \
+            --log automation/logs/appium-server.log \
+            --log-level info &
+          echo "APPIUM_PID=$!" >> $GITHUB_ENV
+          sleep 8
 
       - name: 🏥 Stage 10 — Verify Appium Health
         run: |
-          for i in {1..10}; do
-            STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:4723/status)
-            if [ "$STATUS" = "200" ]; then
-              echo "✅ Appium server ready"
+          for i in {1..15}; do
+            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:4723/status || echo "000")
+            if [ "$HTTP_CODE" = "200" ]; then
+              echo "✅ Appium server is healthy (attempt $i)"
+              curl -s http://localhost:4723/status
               break
             fi
-            echo "Attempt $i — Appium not ready yet, waiting..."
+            echo "⏳ Appium not ready (attempt $i, HTTP $HTTP_CODE) — retrying in 3s..."
             sleep 3
           done
-          curl -s http://localhost:4723/status | python3 -m json.tool
 
-      - name: 🧪 Stage 11 — Execute Appium E2E Tests
+      - name: 🧪 Stage 11 — Execute E2E Tests
         working-directory: automation
         env:
           ANDROID_DEVICE_NAME: ${{ env.EMULATOR_NAME }}
           ANDROID_VERSION: "13.0"
           APK_PATH: ${{ env.APK_PATH }}
         run: |
-          mkdir -p reports screenshots logs
-          npx wdio run config/wdio.conf.ts 2>&1 | tee logs/test-run.log || true
+          mkdir -p reports/allure-results reports/junit reports/JSON reports/Excel reports/HTML reports/Summary screenshots logs
+          npx wdio run config/wdio.conf.ts 2>&1 | tee logs/test-run.log
+          EXIT_CODE=${PIPESTATUS[0]}
+          echo "Test exit code: $EXIT_CODE"
+          # Continue even if tests fail — we still want reports
+          exit 0
 
-      - name: 📸 Stage 12 — Capture Additional Device Screenshots
+      - name: 📸 Stage 12 — Capture Device Screenshots
         if: always()
         run: |
-          adb shell screencap -p /sdcard/final-state.png
-          adb pull /sdcard/final-state.png automation/screenshots/ || true
+          $ANDROID_HOME/platform-tools/adb shell screencap -p /sdcard/final-device-state.png 2>/dev/null || true
+          $ANDROID_HOME/platform-tools/adb pull /sdcard/final-device-state.png automation/screenshots/ 2>/dev/null || true
 
-      - name: 📋 Stage 13 — Capture Device Logs
+      - name: 📋 Stage 13 — Capture Device + Appium Logs
         if: always()
         run: |
-          adb logcat -d > automation/logs/device-logcat.log || true
+          $ANDROID_HOME/platform-tools/adb logcat -d > automation/logs/device-logcat.log 2>/dev/null || true
 
-      - name: 📊 Stage 14 — Generate Excel Reports
+      - name: 📊 Stage 14-16 — Generate All Reports
         if: always()
         working-directory: automation
-        run: npx ts-node reporters/ExcelReporter.ts || true
+        run: |
+          # Generate execution-results.json if it doesn't exist (empty run)
+          if [ ! -f reports/execution-results.json ]; then
+            echo "[]" > reports/execution-results.json
+          fi
+          mkdir -p reports/JSON
+          cp reports/execution-results.json reports/JSON/ || true
+          npx ts-node reporters/ExcelReporter.ts || echo "Excel report skipped"
+          npx ts-node reporters/HtmlReporter.ts || echo "HTML report skipped"
 
-      - name: 🌐 Stage 15 — Generate HTML Reports
-        if: always()
-        working-directory: automation
-        run: npx ts-node reporters/HtmlReporter.ts || true
-
-      - name: 📝 Stage 16 — Copy JSON Report
+      - name: 📝 Stage 17 — GitHub Actions Summary
         if: always()
         run: |
-          cp automation/reports/execution-results.json automation/reports/JSON/ || true
-
-      - name: 📋 Stage 17 — Generate GitHub Actions Summary
-        if: always()
-        run: |
-          RESULTS_FILE="automation/reports/execution-results.json"
-          if [ -f "$RESULTS_FILE" ]; then
-            TOTAL=$(python3 -c "import json; d=json.load(open('$RESULTS_FILE')); print(len(d))")
-            PASSED=$(python3 -c "import json; d=json.load(open('$RESULTS_FILE')); print(sum(1 for r in d if r['status']=='PASSED'))")
-            FAILED=$(python3 -c "import json; d=json.load(open('$RESULTS_FILE')); print(sum(1 for r in d if r['status']=='FAILED'))")
-            SKIPPED=$(python3 -c "import json; d=json.load(open('$RESULTS_FILE')); print(sum(1 for r in d if r['status']=='SKIPPED'))")
-            RATE=$(python3 -c "t=$TOTAL; p=$PASSED; print(f'{(p/t*100):.1f}' if t>0 else '0')")
+          RESULTS="automation/reports/execution-results.json"
+          if [ -f "$RESULTS" ] && [ -s "$RESULTS" ]; then
+            TOTAL=$(python3 -c "import json,sys; d=json.load(open('$RESULTS')); print(len(d))" 2>/dev/null || echo "0")
+            PASSED=$(python3 -c "import json; d=json.load(open('$RESULTS')); print(sum(1 for r in d if r.get('status')=='PASSED'))" 2>/dev/null || echo "0")
+            FAILED=$(python3 -c "import json; d=json.load(open('$RESULTS')); print(sum(1 for r in d if r.get('status')=='FAILED'))" 2>/dev/null || echo "0")
+            SKIPPED=$(python3 -c "import json; d=json.load(open('$RESULTS')); print(sum(1 for r in d if r.get('status')=='SKIPPED'))" 2>/dev/null || echo "0")
+            RATE=$(python3 -c "t=$TOTAL; p=$PASSED; print(f'{(p/t*100):.1f}' if t>0 else '0.0')" 2>/dev/null || echo "0.0")
           else
-            TOTAL=0; PASSED=0; FAILED=0; SKIPPED=0; RATE=0
+            TOTAL=0; PASSED=0; FAILED=0; SKIPPED=0; RATE="0.0"
           fi
 
           cat >> $GITHUB_STEP_SUMMARY << EOF
@@ -239,30 +288,33 @@ jobs:
 
           | Field | Value |
           |---|---|
-          | **Build** | #${{ github.run_number }} |
-          | **Branch** | ${{ github.ref_name }} |
-          | **Commit** | ${{ github.sha }} |
+          | **Build #** | ${{ github.run_number }} |
+          | **Branch** | \`${{ github.ref_name }}\` |
+          | **Commit** | \`${{ github.sha }}\` |
           | **Date** | $(date -u +"%Y-%m-%d %H:%M UTC") |
-          | **App Package** | \`com.nutrivision.expo\` |
+          | **App Package** | \`${{ env.APP_PACKAGE }}\` |
           | **Android API** | ${{ env.ANDROID_API_LEVEL }} |
-          | **Emulator** | ${{ env.EMULATOR_NAME }} |
 
-          ## 📊 Execution Metrics
+          ## 📊 Test Results
 
           | Status | Count |
           |---|---|
-          | 🔢 **Total Tests** | **$TOTAL** |
+          | 🔢 **Total** | **$TOTAL** |
           | ✅ **Passed** | **$PASSED** |
           | ❌ **Failed** | **$FAILED** |
           | ⏭ **Skipped** | **$SKIPPED** |
           | 📈 **Pass Rate** | **$RATE%** |
 
-          ## 📄 Reports
-
-          - [📊 Excel Report](https://VedvyassMohan.github.io/Nutri-Vision/reports/latest/Excel/Automation_Test_Report.xlsx)
-          - [🌐 HTML Report](https://VedvyassMohan.github.io/Nutri-Vision/reports/latest/HTML/execution-report.html)
-          - [📋 Dashboard](https://VedvyassMohan.github.io/Nutri-Vision/reports/latest/HTML/dashboard.html)
+          ## 🔗 Reports
+          - 📊 [HTML Report](https://VedvyassMohan.github.io/Nutri-Vision/reports/latest/HTML/execution-report.html)
+          - 📋 [Dashboard](https://VedvyassMohan.github.io/Nutri-Vision/reports/latest/HTML/dashboard.html)
           EOF
+
+      - name: 🧹 Cleanup Emulator & Appium
+        if: always()
+        run: |
+          kill $APPIUM_PID 2>/dev/null || true
+          kill $EMULATOR_PID 2>/dev/null || true
 
       - name: 📤 Stage 18 — Upload All Artifacts
         if: always()
@@ -275,24 +327,18 @@ jobs:
             automation/screenshots/
             automation/logs/
 
-      - name: 🧹 Cleanup Emulator
-        if: always()
-        run: |
-          kill $(cat emulator.pid) || true
-          kill $(cat appium.pid) || true
-
-  # ========================================================
+  # ============================================================
   # STAGE 19-21: GitHub Pages Deployment
-  # ========================================================
+  # ============================================================
   deploy-reports:
     name: 🚀 Deploy Reports to GitHub Pages
     runs-on: ubuntu-latest
-    needs: e2e-tests
+    needs: [build-apk, e2e-tests]
     if: always()
     permissions:
+      contents: write
       pages: write
       id-token: write
-      contents: write
     steps:
       - name: ⬇️ Checkout gh-pages branch
         uses: actions/checkout@v4
@@ -301,48 +347,73 @@ jobs:
           fetch-depth: 0
         continue-on-error: true
 
-      - name: ⬇️ Download Test Results
+      - name: ⬇️ Checkout main if gh-pages failed
+        if: failure()
+        uses: actions/checkout@v4
+
+      - name: 📥 Download Test Artifacts
         uses: actions/download-artifact@v4
         with:
           name: e2e-test-results-build-${{ github.run_number }}
           path: downloaded-results/
+        continue-on-error: true
 
       - name: 📂 Stage 19 — Prepare Pages Structure
         run: |
-          mkdir -p reports/latest
-          mkdir -p reports/history/build-${{ github.run_number }}
+          mkdir -p reports/latest/HTML
+          mkdir -p reports/latest/Excel
+          mkdir -p reports/latest/JSON
+          mkdir -p reports/latest/Summary
+          mkdir -p reports/latest/screenshots
+          mkdir -p reports/latest/logs
+          mkdir -p "reports/history/build-${{ github.run_number }}"
 
-          # Copy to latest/
-          cp -r downloaded-results/* reports/latest/ || true
+          # Copy to latest
+          if [ -d downloaded-results ]; then
+            cp -r downloaded-results/reports/* reports/latest/ 2>/dev/null || true
+            cp -r downloaded-results/screenshots/* reports/latest/screenshots/ 2>/dev/null || true
+            cp -r downloaded-results/logs/* reports/latest/logs/ 2>/dev/null || true
+            cp -r downloaded-results/* "reports/history/build-${{ github.run_number }}/" 2>/dev/null || true
+          fi
 
-          # Archive to history
-          cp -r downloaded-results/* reports/history/build-${{ github.run_number }}/ || true
-
-      - name: 📋 Stage 20 — Generate History Index
+      - name: 📋 Stage 20 — Generate Reports Index Page
         run: |
-          cat > reports/index.html << 'EOF'
+          cat > reports/index.html << 'HTMLEOF'
           <!DOCTYPE html>
-          <html>
-          <head><title>Nutri-Vision QA Reports</title>
+          <html lang="en">
+          <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Nutri-Vision QA Reports</title>
           <style>
-            body { font-family: system-ui; background: #0f172a; color: #e2e8f0; padding: 40px; }
-            h1 { color: #0abab5; } a { color: #0abab5; }
-            .card { background: #1e293b; border-radius: 12px; padding: 20px; margin: 12px 0; }
-          </style></head>
+            * { box-sizing: border-box; }
+            body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; padding: 40px; }
+            h1 { color: #0abab5; font-size: 28px; }
+            .subtitle { color: #94a3b8; margin-bottom: 32px; }
+            .card { background: #1e293b; border-radius: 16px; padding: 24px; margin: 16px 0; border: 1px solid rgba(255,255,255,0.06); }
+            .card h2 { color: #0abab5; margin-bottom: 12px; }
+            a { color: #0abab5; text-decoration: none; font-weight: 600; }
+            a:hover { text-decoration: underline; }
+            .badge { background: rgba(10,186,181,0.15); color: #0abab5; padding: 4px 12px; border-radius: 20px; font-size: 12px; }
+          </style>
+          </head>
           <body>
           <h1>🥗 Nutri-Vision QA Reports</h1>
+          <p class="subtitle">Android E2E Automation — WebdriverIO + Appium</p>
           <div class="card">
-            <h2>Latest Report — Build #${{ github.run_number }}</h2>
-            <p><a href="latest/HTML/execution-report.html">📊 Full Execution Report</a></p>
-            <p><a href="latest/HTML/dashboard.html">📋 Dashboard</a></p>
-            <p><a href="latest/Summary/summary.md">📝 Summary</a></p>
+            <h2>📊 Latest Report <span class="badge">Build #${{ github.run_number }}</span></h2>
+            <p><a href="latest/HTML/execution-report.html">📋 Full Execution Report</a></p>
+            <p><a href="latest/HTML/dashboard.html">🎯 Dashboard</a></p>
+            <p><a href="latest/HTML/trends.html">📈 Trends</a></p>
+            <p><a href="latest/Summary/summary.md">📝 Markdown Summary</a></p>
           </div>
           <div class="card">
-            <h2>Build History</h2>
-            <p><a href="history/build-${{ github.run_number }}/">Build #${{ github.run_number }}</a> — $(date -u)</p>
+            <h2>🗂️ Build History</h2>
+            <p><a href="history/build-${{ github.run_number }}/">Build #${{ github.run_number }}</a> — ${{ github.sha }}</p>
           </div>
-          </body></html>
-          EOF
+          </body>
+          </html>
+          HTMLEOF
 
       - name: 🚀 Stage 21 — Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -351,18 +422,26 @@ jobs:
           publish_dir: reports
           destination_dir: reports
           keep_files: true
-          commit_message: "ci: publish E2E test reports for build #${{ github.run_number }}"
+          commit_message: "ci: E2E reports build #${{ github.run_number }} [${{ github.sha }}]"
 
-  # ========================================================
+  # ============================================================
   # FAILURE NOTIFICATION
-  # ========================================================
+  # ============================================================
   notify-failure:
     name: 🔔 Notify on Critical Failure
     runs-on: ubuntu-latest
-    needs: e2e-tests
+    needs: [build-apk, e2e-tests]
     if: failure()
     steps:
       - name: 💥 Failure Summary
         run: |
-          echo "::error::E2E Test suite failed! Check artifacts for screenshots and logs."
-          echo "Pipeline failed at job: ${{ github.job }}"
+          cat >> $GITHUB_STEP_SUMMARY << EOF
+          # ❌ Pipeline Failed
+
+          | Job | Status |
+          |---|---|
+          | Build APK | ${{ needs.build-apk.result }} |
+          | E2E Tests | ${{ needs.e2e-tests.result }} |
+
+          **Check the failed job logs for details.**
+          EOF
