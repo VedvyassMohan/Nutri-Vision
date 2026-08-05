@@ -1,7 +1,7 @@
 {
   "name": "nutri-vision-expo",
   "version": "1.0.0",
-  "main": "App.tsx",
+  "main": "index.js",
   "scripts": {
     "start": "powershell -Command \"$env:ANDROID_HOME='C:\\Users\\Vedvyass M\\Music\\Nutri-vision\\android-sdk'; $env:PATH='C:\\Users\\Vedvyass M\\Music\\Nutri-vision\\android-sdk\\platform-tools;' + $env:PATH; npx expo start\"",
     "android": "powershell -Command \"$env:ANDROID_HOME='C:\\Users\\Vedvyass M\\Music\\Nutri-vision\\android-sdk'; $env:PATH='C:\\Users\\Vedvyass M\\Music\\Nutri-vision\\android-sdk\\platform-tools;' + $env:PATH; npx expo start --android\"",
@@ -23,8 +23,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@types/react": "~18.2.45",
-    "@types/react-native": "^0.73.0",
-    "typescript": "^5.3.0"
+    "typescript": "~5.3.3"
   },
   "private": true
 }
