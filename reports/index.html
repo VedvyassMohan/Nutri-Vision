@@ -5,30 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nutri-Vision QA Reports</title>
 <style>
-  * { box-sizing: border-box; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; padding: 40px; }
-  h1 { color: #0abab5; font-size: 28px; }
-  .subtitle { color: #94a3b8; margin-bottom: 32px; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f172a; color: #e2e8f0; padding: 40px; }
+  h1 { color: #0abab5; font-size: 28px; margin-bottom: 8px; }
+  .sub { color: #94a3b8; margin-bottom: 32px; }
   .card { background: #1e293b; border-radius: 16px; padding: 24px; margin: 16px 0; border: 1px solid rgba(255,255,255,0.06); }
-  .card h2 { color: #0abab5; margin-bottom: 12px; }
+  .card h2 { color: #0abab5; margin-bottom: 16px; }
   a { color: #0abab5; text-decoration: none; font-weight: 600; }
   a:hover { text-decoration: underline; }
-  .badge { background: rgba(10,186,181,0.15); color: #0abab5; padding: 4px 12px; border-radius: 20px; font-size: 12px; }
+  .badge { background: rgba(10,186,181,0.15); color: #0abab5; padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-left: 8px; }
+  .status-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+  .status-item { background: #0f172a; border-radius: 8px; padding: 12px; }
+  .label { font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+  .value { font-size: 18px; font-weight: 700; margin-top: 4px; }
+  ul { list-style: none; }
+  ul li { padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  ul li:last-child { border: none; }
 </style>
 </head>
 <body>
 <h1>🥗 Nutri-Vision QA Reports</h1>
-<p class="subtitle">Android E2E Automation — WebdriverIO + Appium</p>
+<p class="sub">Android E2E Automation — WebdriverIO + Appium | Node 22</p>
+
 <div class="card">
-  <h2>📊 Latest Report <span class="badge">Build #6</span></h2>
-  <p><a href="latest/HTML/execution-report.html">📋 Full Execution Report</a></p>
-  <p><a href="latest/HTML/dashboard.html">🎯 Dashboard</a></p>
-  <p><a href="latest/HTML/trends.html">📈 Trends</a></p>
-  <p><a href="latest/Summary/summary.md">📝 Markdown Summary</a></p>
+  <h2>📊 Latest Run <span class="badge">Build #7</span></h2>
+  <div class="status-grid">
+    <div class="status-item"><div class="label">APK Build</div><div class="value">❌ failure</div></div>
+    <div class="status-item"><div class="label">E2E Tests</div><div class="value">⚠️ skipped</div></div>
+    <div class="status-item"><div class="label">Commit</div><div class="value" style="font-size:12px">6e4a094284d63a9241b52c510bdfb67cbf0bcdce</div></div>
+    <div class="status-item"><div class="label">Branch</div><div class="value">main</div></div>
+  </div>
 </div>
+
+<div class="card">
+  <h2>📄 Reports</h2>
+  <ul>
+    <li><a href="latest/HTML/execution-report.html">📋 Full Execution Report</a></li>
+    <li><a href="latest/HTML/dashboard.html">🎯 Dashboard</a></li>
+    <li><a href="latest/HTML/trends.html">📈 Trends</a></li>
+    <li><a href="latest/Summary/summary.md">📝 Markdown Summary</a></li>
+  </ul>
+</div>
+
 <div class="card">
   <h2>🗂️ Build History</h2>
-  <p><a href="history/build-6/">Build #6</a> — 4cc83036e0e3ec8b6dcf4240c6243447d613708c</p>
+  <ul>
+    <li><a href="history/build-7/">Build #7</a> — 6e4a094284d63a9241b52c510bdfb67cbf0bcdce</li>
+  </ul>
 </div>
 </body>
 </html>
