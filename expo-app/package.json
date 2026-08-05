@@ -2,8 +2,8 @@
   "name": "nutri-vision-expo",
   "version": "1.0.0",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
+    "start": "powershell -Command \"$env:ANDROID_HOME='C:\\Users\\Vedvyass M\\Music\\Nutri-vision\\android-sdk'; $env:PATH='C:\\Users\\Vedvyass M\\Music\\Nutri-vision\\android-sdk\\platform-tools;' + $env:PATH; npx expo start\"",
+    "android": "powershell -Command \"$env:ANDROID_HOME='C:\\Users\\Vedvyass M\\Music\\Nutri-vision\\android-sdk'; $env:PATH='C:\\Users\\Vedvyass M\\Music\\Nutri-vision\\android-sdk\\platform-tools;' + $env:PATH; npx expo start --android\"",
     "ios": "expo start --ios",
     "web": "expo start --web"
   },
