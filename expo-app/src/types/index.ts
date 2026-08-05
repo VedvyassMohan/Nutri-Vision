@@ -91,6 +91,7 @@ export interface VisionResult {
   fat?: number;
   emoji?: string;
   confidence?: number;
+  modelName?: string;
   source?: string;
   errorMessage?: string;
 }
