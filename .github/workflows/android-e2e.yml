@@ -50,12 +50,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-          cache-dependency-path: expo-app/package-lock.json
 
       - name: 📦 Stage 4b — Install JS Dependencies
         working-directory: expo-app
-        run: npm install --legacy-peer-deps
+        run: npm install --legacy-peer-deps --prefer-offline
 
       - name: 📦 Stage 4c — Create assets directory
         run: mkdir -p expo-app/android/app/src/main/assets
