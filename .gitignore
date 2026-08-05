@@ -24,6 +24,8 @@ android-sdk/
 *.env.production.local
 .DS_Store
 Thumbs.db
+*.db
+*.db-journal
 
 # Executables & Binaries
 *.apk
