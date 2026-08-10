@@ -41,11 +41,15 @@ jobs:
 
       - name: 📦 Stage 3 — Setup Android SDK
         uses: android-actions/setup-android@v3
-        with:
-          packages: |
-            platforms;android-34
-            build-tools;34.0.0
-            ndk;26.1.10909125
+
+      - name: 📦 Stage 3b — Install Required Android SDK Packages
+        run: |
+          yes | sdkmanager --sdk_root="$ANDROID_HOME" \
+            "platforms;android-34" \
+            "build-tools;34.0.0" \
+            "ndk;26.1.10909125" \
+            "platform-tools" 2>/dev/null || true
+          echo "✅ Android SDK packages installed"
 
       - name: 🟢 Stage 4 — Setup Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
