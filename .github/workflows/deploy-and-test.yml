@@ -1,0 +1,137 @@
+name: 🌐 Deploy & Live Selenium E2E Pipeline
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+env:
+  NODE_VERSION: '22'
+  BASE_URL: 'https://VedvyassMohan.github.io/Nutri-Vision/'
+
+jobs:
+  # ============================================================
+  # STAGE 1-5: Build & Deploy to GitHub Pages
+  # ============================================================
+  build-and-deploy:
+    name: 🔨 Build & Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Stage 1 — Repository Checkout
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 📦 Stage 2 — Dependency Installation
+        run: npm install --legacy-peer-deps
+
+      - name: 🔨 Stage 3 — Build Application
+        run: npm run build
+
+      - name: 🔍 Stage 4 — Static Analysis & Verification
+        run: |
+          echo "Checking built web assets in dist/..."
+          ls -la dist/
+          test -f dist/index.html || (echo "❌ dist/index.html missing!" && exit 1)
+          echo "✅ Build verified successfully"
+
+      - name: 🚀 Stage 5 — Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          keep_files: true
+          commit_message: "ci(deploy): build and publish live web app [${{ github.sha }}]"
+
+  # ============================================================
+  # STAGE 6-13: Verification, Live Selenium E2E & Reporting
+  # ============================================================
+  verify-and-test:
+    name: 🌐 Live Deployment Verification & Selenium E2E (400+ Tests)
+    runs-on: ubuntu-latest
+    needs: build-and-deploy
+    steps:
+      - name: ⬇️ Repository Checkout
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 📦 Install Test Dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: ⏳ Stage 6 — Wait for Deployment Propagation
+        run: |
+          echo "Waiting 15 seconds for GitHub Pages DNS & deployment propagation..."
+          sleep 15
+
+      - name: 🏥 Stage 7 — Live Deployment Verification
+        run: |
+          echo "Verifying live URL HTTP 200: ${{ env.BASE_URL }}"
+          for i in {1..10}; do
+            HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "${{ env.BASE_URL }}" || echo "000")
+            if [ "$HTTP_STATUS" = "200" ] || [ "$HTTP_STATUS" = "301" ] || [ "$HTTP_STATUS" = "302" ]; then
+              echo "✅ Deployment is live and responding with HTTP $HTTP_STATUS!"
+              break
+            fi
+            echo "Attempt $i — Status $HTTP_STATUS, retrying in 5s..."
+            sleep 5
+          done
+
+      - name: 🧪 Stage 8 — Run Selenium E2E Tests (Live BASE_URL)
+        env:
+          BASE_URL: ${{ env.BASE_URL }}
+        run: |
+          echo "Executing Live Selenium Web Suite against ${BASE_URL}"
+          node scripts/execute-selenium-live-suite.js
+
+      - name: 📊 Stage 9 & 10 — Reports Verification (HTML & Excel)
+        if: always()
+        run: |
+          echo "Checking generated test reports..."
+          ls -la "Test Results/Excel/"
+          ls -la "Test Results/HTML/"
+          ls -la "Test Results/JSON/"
+
+      - name: 📤 Stage 11 — Upload Test Artifacts (30-Day Retention)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-selenium-e2e-reports-build-${{ github.run_number }}
+          path: |
+            Test Results/
+            automation/reports/
+          retention-days: 30
+
+      - name: 📝 Stage 12 — Publish GitHub Action Step Summary
+        if: always()
+        run: |
+          SUMMARY_FILE="Test Results/Summary/summary.md"
+          if [ -f "$SUMMARY_FILE" ]; then
+            cat "$SUMMARY_FILE" >> $GITHUB_STEP_SUMMARY
+          else
+            cat >> $GITHUB_STEP_SUMMARY << EOF
+            # 🌐 Live Selenium E2E Pipeline Completed
+            Target URL: ${{ env.BASE_URL }}
+            Build Number: #${{ github.run_number }}
+            Commit: \`${{ github.sha }}\`
+            EOF
+          fi
+
+      - name: 🗂️ Stage 13 — Store Historical Results
+        if: always()
+        run: |
+          mkdir -p "Test Results/history/build-${{ github.run_number }}"
+          cp -r "Test Results/"* "Test Results/history/build-${{ github.run_number }}/" 2>/dev/null || true
