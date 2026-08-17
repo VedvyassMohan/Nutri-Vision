@@ -1,0 +1,4 @@
+registration_number,vehicle_type,registration_date,owner_name,owner_address,owner_phone
+TN01AB1234,Car,2024-01-15,Arun Kumar,Chennai,9876543210
+TN02CD5678,Bike,,Rahul,Madurai,9876543211
+TN03EF9012,Truck,2024-03-03,Priya,Coimbatore,9876543212

@@ -9,7 +9,10 @@ import {
   ScrollView,
   Image,
   Alert,
-  ActivityIndicator
+  ActivityIndicator,
+  KeyboardAvoidingView,
+  Platform,
+  SafeAreaView
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
@@ -58,7 +61,7 @@ export default function AddMealModal({ visible, onClose, onAddMeal, isDarkMode }
       }
       setParsedWeight(parsed.weightGram || null);
 
-      if (parsed.detectedRecipe && !selectedRecipe) {
+      if (parsed.detectedRecipe) {
         setSelectedRecipe(parsed.detectedRecipe);
         setSearchQuery(parsed.detectedRecipe.name);
         if (parsed.multiplier) setServingMultiplier(parsed.multiplier);
@@ -208,27 +211,44 @@ export default function AddMealModal({ visible, onClose, onAddMeal, isDarkMode }
   const inputBg = isDarkMode ? '#0f172a' : '#f1f5f9';
 
   return (
-    <Modal visible={visible} animationType="slide" transparent onRequestClose={onClose}>
-      <View style={styles.overlay}>
-        <View style={[styles.sheetContainer, { backgroundColor: bgColor }]}>
+    <Modal visible={visible} animationType="slide" transparent={false} onRequestClose={onClose}>
+      <SafeAreaView style={[styles.fullScreenContainer, { backgroundColor: bgColor }]}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+          style={{ flex: 1 }}
+        >
+          {/* Sheet Header */}
           <View style={styles.sheetHeader}>
             <View style={styles.sheetHandleBar} />
             <View style={styles.headerTitleRow}>
               <Text style={[styles.sheetTitle, { color: textColor }]}>Add Meal</Text>
               <TouchableOpacity onPress={onClose} style={styles.btnClose}>
-                <Ionicons name="close" size={22} color={mutedColor} />
+                <Ionicons name="close" size={24} color={textColor} />
               </TouchableOpacity>
             </View>
           </View>
 
-          <ScrollView contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps="handled">
+          {/* Full Scrollable View */}
+          <ScrollView
+            style={{ flex: 1 }}
+            contentContainerStyle={styles.scrollContent}
+            keyboardShouldPersistTaps="handled"
+            showsVerticalScrollIndicator={true}
+          >
             {/* Camera / Photo Preview Box */}
             <View style={styles.previewSquareBox}>
+              <View style={styles.statusBadgeLeft}>
+                <View style={styles.recDot} />
+              </View>
+              <View style={styles.statusBadgeRight}>
+                <Text style={styles.statusBadgeText}>Ready</Text>
+              </View>
+
               {previewImage ? (
-                <Image source={{ uri: previewImage }} style={styles.previewImg} />
+                <Image source={{ uri: previewImage }} style={styles.previewImg} resizeMode="cover" />
               ) : (
                 <View style={styles.placeholderBox}>
-                  <Ionicons name="camera-outline" size={44} color="#0abab5" />
+                  <Ionicons name="camera" size={48} color="#0abab5" />
                   <Text style={[styles.placeholderText, { color: mutedColor }]}>
                     Capture or Upload Food Photo
                   </Text>
@@ -237,32 +257,32 @@ export default function AddMealModal({ visible, onClose, onAddMeal, isDarkMode }
             </View>
 
             {/* Action Buttons */}
-            <View style={styles.btnRow}>
-              <TouchableOpacity
-                style={styles.btnAction}
-                onPress={() => {
-                  if (previewImage) {
-                    setPreviewImage(null);
-                    setAiVisionResult(null);
-                  } else {
-                    handlePickImage(true);
-                  }
-                }}
-              >
-                <Ionicons name={previewImage ? "refresh" : "camera"} size={18} color="#ffffff" style={{ marginRight: 6 }} />
-                <Text style={styles.btnActionText}>
-                  {previewImage ? 'Retake Photo' : 'Capture & Analyze'}
-                </Text>
-              </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.btnCapture}
+              onPress={() => {
+                if (previewImage) {
+                  setPreviewImage(null);
+                  setAiVisionResult(null);
+                } else {
+                  handlePickImage(true);
+                }
+              }}
+            >
+              <Text style={{ fontSize: 16, marginRight: 8 }}>📷</Text>
+              <Text style={styles.btnCaptureText}>
+                {previewImage ? 'Retake Photo' : 'Capture & Analyze with Vision AI'}
+              </Text>
+            </TouchableOpacity>
 
-              <TouchableOpacity
-                style={[styles.btnAction, { backgroundColor: '#475569' }]}
-                onPress={() => handlePickImage(false)}
-              >
-                <Ionicons name="image" size={18} color="#ffffff" style={{ marginRight: 6 }} />
-                <Text style={styles.btnActionText}>Gallery</Text>
-              </TouchableOpacity>
-            </View>
+            <TouchableOpacity
+              style={styles.btnUpload}
+              onPress={() => handlePickImage(false)}
+            >
+              <Text style={{ fontSize: 16, marginRight: 8 }}>🖼️</Text>
+              <Text style={[styles.btnUploadText, { color: mutedColor }]}>
+                Upload photo from gallery
+              </Text>
+            </TouchableOpacity>
 
             {/* AI Vision Model Banner */}
             {aiAnalyzing && (
@@ -278,7 +298,7 @@ export default function AddMealModal({ visible, onClose, onAddMeal, isDarkMode }
             {aiVisionResult && !aiAnalyzing && (
               aiVisionResult.isValidFood ? (
                 <View style={[styles.aiBanner, { backgroundColor: 'rgba(10, 186, 181, 0.15)' }]}>
-                  <Text style={{ fontSize: 20, marginRight: 10 }}>🤖</Text>
+                  <Text style={{ fontSize: 22, marginRight: 10 }}>🤖</Text>
                   <View style={{ flex: 1 }}>
                     <Text style={styles.aiBannerTag}>Model: {MODEL_ID}</Text>
                     <Text style={styles.aiBannerTitle}>
@@ -291,7 +311,7 @@ export default function AddMealModal({ visible, onClose, onAddMeal, isDarkMode }
                 </View>
               ) : (
                 <View style={[styles.aiBanner, { backgroundColor: 'rgba(239, 68, 68, 0.12)' }]}>
-                  <Text style={{ fontSize: 20, marginRight: 10 }}>⚠️</Text>
+                  <Text style={{ fontSize: 22, marginRight: 10 }}>⚠️</Text>
                   <View style={{ flex: 1 }}>
                     <Text style={[styles.aiBannerTag, { color: '#ef4444' }]}>Notice</Text>
                     <Text style={[styles.aiBannerTitle, { color: '#ef4444' }]}>Image lacks vital details</Text>
@@ -311,7 +331,7 @@ export default function AddMealModal({ visible, onClose, onAddMeal, isDarkMode }
               </View>
               <TextInput
                 style={[styles.textArea, { backgroundColor: inputBg, color: textColor }]}
-                placeholder="E.g., 200g biryani with 2 extra eggs, less oil..."
+                placeholder="E.g., with 2 extra eggs, + 1 cup rice, less oil, extra cheese..."
                 placeholderTextColor={mutedColor}
                 multiline
                 value={description}
@@ -354,7 +374,7 @@ export default function AddMealModal({ visible, onClose, onAddMeal, isDarkMode }
               <View style={styles.searchWrapper}>
                 <TextInput
                   style={[styles.searchInput, { backgroundColor: inputBg, color: textColor }]}
-                  placeholder="Search recipes (e.g. Biryani, Pizza, Dosa...)"
+                  placeholder="Search recipes (e.g. Chicken, Pizza, Omelet...)"
                   placeholderTextColor={mutedColor}
                   value={searchQuery}
                   onChangeText={handleSearchChange}
@@ -362,7 +382,7 @@ export default function AddMealModal({ visible, onClose, onAddMeal, isDarkMode }
                 />
                 {searchQuery ? (
                   <TouchableOpacity onPress={handleClearSelectedRecipe} style={styles.clearSearchBtn}>
-                    <Ionicons name="close-circle" size={18} color={mutedColor} />
+                    <Ionicons name="close-circle" size={20} color={mutedColor} />
                   </TouchableOpacity>
                 ) : null}
               </View>
@@ -376,7 +396,7 @@ export default function AddMealModal({ visible, onClose, onAddMeal, isDarkMode }
                       style={styles.dropdownItem}
                       onPress={() => handleSelectRecipe(item)}
                     >
-                      <Text style={{ fontSize: 20, marginRight: 10 }}>{item.emoji}</Text>
+                      <Text style={{ fontSize: 22, marginRight: 10 }}>{item.emoji}</Text>
                       <View style={{ flex: 1 }}>
                         <Text style={[styles.dropdownName, { color: textColor }]}>{item.name}</Text>
                         <Text style={[styles.dropdownMacros, { color: mutedColor }]}>
@@ -493,37 +513,31 @@ export default function AddMealModal({ visible, onClose, onAddMeal, isDarkMode }
               </View>
             )}
 
+            {/* Add Meal Submit Button */}
             <TouchableOpacity style={styles.btnSubmit} onPress={handleSubmit}>
               <Text style={styles.btnSubmitText}>Add Meal ({finalCal} kcal)</Text>
             </TouchableOpacity>
           </ScrollView>
-        </View>
-      </View>
+        </KeyboardAvoidingView>
+      </SafeAreaView>
     </Modal>
   );
 }
 
 const styles = StyleSheet.create({
-  overlay: {
+  fullScreenContainer: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-    justifyContent: 'flex-end',
-  },
-  sheetContainer: {
-    height: '84%',
-    borderTopLeftRadius: 24,
-    borderTopRightRadius: 24,
-    paddingHorizontal: 16,
-    paddingTop: 12,
   },
   sheetHeader: {
     alignItems: 'center',
-    marginBottom: 8,
+    paddingHorizontal: 20,
+    paddingTop: 12,
+    paddingBottom: 8,
   },
   sheetHandleBar: {
-    width: 40,
-    height: 4,
-    borderRadius: 2,
+    width: 44,
+    height: 5,
+    borderRadius: 3,
     backgroundColor: '#cbd5e1',
     marginBottom: 10,
   },
@@ -532,32 +546,73 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '100%',
     alignItems: 'center',
-    paddingBottom: 6,
   },
   sheetTitle: {
-    fontSize: 20,
-    fontWeight: '800',
+    fontSize: 22,
+    fontWeight: '900',
   },
   btnClose: {
-    padding: 4,
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: 'rgba(0,0,0,0.06)',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   scrollContent: {
-    paddingBottom: 32,
+    paddingHorizontal: 20,
+    paddingTop: 8,
+    paddingBottom: 100,
   },
   previewSquareBox: {
-    aspectRatio: 1,
-    maxWidth: 220,
+    width: 220,
+    height: 220,
     alignSelf: 'center',
-    borderRadius: 16,
+    borderRadius: 20,
     overflow: 'hidden',
     backgroundColor: 'rgba(10, 186, 181, 0.08)',
-    marginBottom: 12,
+    marginBottom: 14,
     borderWidth: 1.5,
-    borderColor: 'rgba(10, 186, 181, 0.2)',
+    borderColor: 'rgba(10, 186, 181, 0.25)',
+    position: 'relative',
+  },
+  statusBadgeLeft: {
+    position: 'absolute',
+    top: 10,
+    left: 10,
+    zIndex: 10,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  recDot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: '#ef4444',
+  },
+  statusBadgeRight: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    zIndex: 10,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 10,
+  },
+  statusBadgeText: {
+    color: '#ffffff',
+    fontSize: 10,
+    fontWeight: '700',
   },
   previewImg: {
     width: '100%',
     height: '100%',
+    borderRadius: 20,
   },
   placeholderBox: {
     flex: 1,
@@ -571,31 +626,42 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: '600',
   },
-  btnRow: {
-    flexDirection: 'row',
-    gap: 10,
-    marginBottom: 12,
-  },
-  btnAction: {
-    flex: 1,
-    height: 42,
-    borderRadius: 12,
+  btnCapture: {
+    height: 48,
+    borderRadius: 14,
     backgroundColor: '#0abab5',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: 8,
+    shadowColor: '#0abab5',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.25,
+    shadowRadius: 8,
+    elevation: 3,
   },
-  btnActionText: {
+  btnCaptureText: {
     color: '#ffffff',
+    fontWeight: '800',
+    fontSize: 14,
+  },
+  btnUpload: {
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    marginBottom: 16,
+  },
+  btnUploadText: {
     fontWeight: '700',
     fontSize: 13,
   },
   aiBanner: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderRadius: 14,
-    padding: 12,
-    marginBottom: 12,
+    borderRadius: 16,
+    padding: 14,
+    marginBottom: 14,
   },
   aiBannerTag: {
     fontSize: 10,
@@ -605,7 +671,7 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   aiBannerTitle: {
-    fontSize: 13,
+    fontSize: 14,
     fontWeight: '800',
     color: '#0abab5',
   },
@@ -615,37 +681,42 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   card: {
-    borderRadius: 16,
-    padding: 14,
-    marginBottom: 12,
+    borderRadius: 18,
+    padding: 16,
+    marginBottom: 14,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 6,
   },
   cardHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 8,
+    marginBottom: 10,
   },
   cardTitle: {
-    fontSize: 14,
-    fontWeight: '700',
+    fontSize: 15,
+    fontWeight: '800',
   },
   textArea: {
-    height: 72,
-    borderRadius: 12,
+    height: 80,
+    borderRadius: 14,
     padding: 12,
-    fontSize: 13,
+    fontSize: 14,
     textAlignVertical: 'top',
   },
   additionsContainer: {
-    marginTop: 10,
-    paddingTop: 8,
+    marginTop: 12,
+    paddingTop: 10,
     borderTopWidth: 1,
     borderTopColor: 'rgba(0,0,0,0.06)',
   },
   additionsTitle: {
     fontSize: 11,
-    fontWeight: '700',
+    fontWeight: '800',
     color: '#0abab5',
-    marginBottom: 6,
+    marginBottom: 8,
   },
   chipsRow: {
     flexDirection: 'row',
@@ -654,7 +725,7 @@ const styles = StyleSheet.create({
   },
   chip: {
     paddingHorizontal: 10,
-    paddingVertical: 4,
+    paddingVertical: 5,
     borderRadius: 12,
   },
   chipPositive: {
@@ -678,11 +749,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   searchInput: {
-    height: 44,
-    borderRadius: 12,
-    paddingHorizontal: 12,
-    paddingRight: 36,
-    fontSize: 13,
+    height: 48,
+    borderRadius: 14,
+    paddingHorizontal: 14,
+    paddingRight: 38,
+    fontSize: 14,
   },
   clearSearchBtn: {
     position: 'absolute',
@@ -690,22 +761,22 @@ const styles = StyleSheet.create({
     padding: 4,
   },
   dropdownList: {
-    borderRadius: 12,
-    maxHeight: 180,
-    padding: 6,
-    marginTop: 6,
+    borderRadius: 14,
+    maxHeight: 200,
+    padding: 8,
+    marginTop: 8,
   },
   dropdownItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 8,
+    paddingVertical: 10,
     paddingHorizontal: 8,
     borderBottomWidth: 1,
     borderBottomColor: 'rgba(0,0,0,0.05)',
   },
   dropdownName: {
-    fontSize: 13,
-    fontWeight: '700',
+    fontSize: 14,
+    fontWeight: '800',
   },
   dropdownMacros: {
     fontSize: 11,
@@ -713,33 +784,33 @@ const styles = StyleSheet.create({
   },
   selectedRecipeBox: {
     backgroundColor: 'rgba(10, 186, 181, 0.1)',
-    borderRadius: 12,
-    padding: 12,
-    marginTop: 10,
+    borderRadius: 14,
+    padding: 14,
+    marginTop: 12,
   },
   srHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 8,
+    marginBottom: 10,
   },
   srTitle: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '800',
     color: '#0abab5',
   },
   srCal: {
-    fontSize: 14,
-    fontWeight: '800',
+    fontSize: 15,
+    fontWeight: '900',
     color: '#0abab5',
   },
   srMacrosRow: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    backgroundColor: 'rgba(255,255,255,0.6)',
-    borderRadius: 8,
-    paddingVertical: 6,
-    marginBottom: 10,
+    backgroundColor: 'rgba(255,255,255,0.7)',
+    borderRadius: 10,
+    paddingVertical: 8,
+    marginBottom: 12,
   },
   srMacroItem: {
     alignItems: 'center',
@@ -747,38 +818,38 @@ const styles = StyleSheet.create({
   srMacroLabel: {
     fontSize: 10,
     color: '#64748b',
-    fontWeight: '600',
+    fontWeight: '700',
   },
   srMacroVal: {
-    fontSize: 12,
+    fontSize: 13,
     fontWeight: '800',
     color: '#0f172a',
-    marginTop: 1,
+    marginTop: 2,
   },
   portionRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 6,
+    gap: 8,
   },
   portionLabel: {
-    fontSize: 11,
-    fontWeight: '700',
+    fontSize: 12,
+    fontWeight: '800',
     color: '#0abab5',
     marginRight: 4,
   },
   portionBtn: {
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    borderRadius: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 10,
     backgroundColor: '#cbd5e1',
   },
   portionBtnActive: {
     backgroundColor: '#0abab5',
   },
   portionBtnText: {
-    fontSize: 11,
+    fontSize: 12,
     color: '#334155',
-    fontWeight: '600',
+    fontWeight: '700',
   },
   portionBtnTextActive: {
     color: '#ffffff',
@@ -788,68 +859,68 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 8,
+    marginBottom: 10,
   },
   summaryTitle: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '800',
   },
   summaryTotalCal: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: '900',
     color: '#0abab5',
   },
   summaryBreakdown: {
-    marginBottom: 10,
+    marginBottom: 12,
   },
   summaryRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 3,
+    marginBottom: 4,
   },
   summaryRowLabel: {
-    fontSize: 11,
+    fontSize: 12,
   },
   summaryRowVal: {
-    fontSize: 11,
+    fontSize: 12,
     fontWeight: '700',
   },
   macroGrid: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    backgroundColor: 'rgba(10, 186, 181, 0.08)',
-    borderRadius: 12,
-    paddingVertical: 8,
+    backgroundColor: 'rgba(10, 186, 181, 0.1)',
+    borderRadius: 14,
+    paddingVertical: 10,
   },
   macroGridItem: {
     alignItems: 'center',
   },
   macroGridVal: {
-    fontSize: 13,
-    fontWeight: '800',
+    fontSize: 14,
+    fontWeight: '900',
     color: '#0abab5',
   },
   macroGridLabel: {
     fontSize: 10,
     color: '#64748b',
-    fontWeight: '600',
+    fontWeight: '700',
   },
   btnSubmit: {
-    height: 48,
-    borderRadius: 14,
+    height: 52,
+    borderRadius: 16,
     backgroundColor: '#0abab5',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 8,
+    marginTop: 14,
     shadowColor: '#0abab5',
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.3,
     shadowRadius: 8,
     elevation: 4,
   },
   btnSubmitText: {
     color: '#ffffff',
-    fontWeight: '800',
+    fontWeight: '900',
     fontSize: 16,
   },
 });

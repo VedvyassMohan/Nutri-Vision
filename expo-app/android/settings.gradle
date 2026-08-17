@@ -1,10 +1,9 @@
 pluginManagement {
   repositories {
-    mavenCentral()
     google()
+    mavenCentral()
     gradlePluginPortal()
-    maven { url "http://repo.maven.apache.org/maven2/"; allowInsecureProtocol = true }
-    maven { url "http://plugins.gradle.org/m2/"; allowInsecureProtocol = true }
+    maven { url "https://www.jitpack.io" }
   }
   def version = providers.exec {
     commandLine("node", "-e", "console.log(require('react-native/package.json').version);")
@@ -58,9 +57,7 @@ dependencyResolutionManagement {
   repositories {
     google()
     mavenCentral()
-    maven { url "http://repo.maven.apache.org/maven2/"; allowInsecureProtocol = true }
-    maven { url "http://plugins.gradle.org/m2/"; allowInsecureProtocol = true }
-    maven { url "http://www.jitpack.io"; allowInsecureProtocol = true }
+    maven { url "https://www.jitpack.io" }
     maven {
       url(new File(['node', '--print', "require.resolve('react-native/package.json')"].execute(null, rootDir).text.trim(), '../android'))
     }

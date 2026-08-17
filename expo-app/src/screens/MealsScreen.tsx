@@ -76,7 +76,7 @@ export default function MealsScreen({ user, isDarkMode, onOpenAddMealModal }: Me
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: bgColor }]}>
-      {/* Header with Title and Add Meal Button */}
+      {/* Header with Title (Add Meal top-right button removed per user request) */}
       <View style={styles.header}>
         <View>
           <Text style={[styles.title, { color: textColor }]}>Today's Meals</Text>
@@ -84,10 +84,6 @@ export default function MealsScreen({ user, isDarkMode, onOpenAddMealModal }: Me
             Track your daily nutrition and macro breakdown
           </Text>
         </View>
-        <TouchableOpacity style={styles.btnHeaderAdd} onPress={onOpenAddMealModal}>
-          <Ionicons name="add" size={18} color="#ffffff" style={{ marginRight: 4 }} />
-          <Text style={styles.btnHeaderAddText}>Add Meal</Text>
-        </TouchableOpacity>
       </View>
 
       <ScrollView contentContainerStyle={styles.scrollContent}>
@@ -161,9 +157,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 16,
     paddingBottom: 8,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
   },
   title: {
     fontSize: 22,
@@ -172,19 +165,6 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 12,
     marginTop: 2,
-  },
-  btnHeaderAdd: {
-    backgroundColor: '#0abab5',
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    borderRadius: 12,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  btnHeaderAddText: {
-    color: '#ffffff',
-    fontWeight: '700',
-    fontSize: 13,
   },
   scrollContent: {
     padding: 16,
