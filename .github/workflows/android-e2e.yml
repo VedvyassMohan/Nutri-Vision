@@ -74,40 +74,102 @@ jobs:
             --config metro.config.js \
             --reset-cache || npx expo export:embed 2>/dev/null || true
 
-      - name: 🔑 Stage 5 — Nuclear Gradle Cache Purge & Grant Permissions
+      - name: 🔑 Stage 5 — Comprehensive Gradle Property Sanitization
         run: |
-          echo "🧹 Removing entire ~/.gradle to eliminate any cached gradle.properties with stale Windows paths..."
+          echo "========================================="
+          echo "🧹 STEP 1: Nuke ALL Gradle caches"
+          echo "========================================="
           rm -rf ~/.gradle 2>/dev/null || true
           rm -rf $HOME/.gradle 2>/dev/null || true
-          mkdir -p $HOME/.gradle
+          rm -rf /home/runner/.gradle 2>/dev/null || true
           
-          echo "🧹 Scanning ALL .properties files in expo-app/android for org.gradle.java.home..."
-          find expo-app/android -name "gradle.properties" -type f | while read f; do
+          echo "========================================="
+          echo "🧹 STEP 2: Find & purge org.gradle.java.home from ALL files in checkout"
+          echo "========================================="
+          # Search EVERYWHERE including node_modules
+          find . -name "gradle.properties" -type f 2>/dev/null | while read f; do
+            echo "  📄 Checking: $f"
             if grep -q "org.gradle.java.home" "$f" 2>/dev/null; then
-              echo "  ⚠️  Found org.gradle.java.home in: $f — removing it"
+              echo "  ⚠️  FOUND org.gradle.java.home in: $f"
+              echo "  📋 Before: $(grep 'org.gradle.java.home' "$f")"
               sed -i '/org\.gradle\.java\.home/d' "$f"
+              echo "  ✅ Removed!"
             fi
           done
           
-          echo "🔑 Granting execute permission to gradlew..."
-          chmod +x expo-app/android/gradlew
+          # Also check local.properties files
+          find . -name "local.properties" -type f 2>/dev/null | while read f; do
+            echo "  📄 Checking: $f"
+            if grep -q "org.gradle.java.home" "$f" 2>/dev/null; then
+              echo "  ⚠️  FOUND org.gradle.java.home in: $f"
+              sed -i '/org\.gradle\.java\.home/d' "$f"
+              echo "  ✅ Removed!"
+            fi
+          done
           
-          echo "✅ JAVA_HOME = $JAVA_HOME"
+          echo "========================================="
+          echo "🧹 STEP 3: Verify project gradle.properties is clean"  
+          echo "========================================="
+          echo "--- expo-app/android/gradle.properties ---"
+          cat expo-app/android/gradle.properties
+          echo ""
+          echo "--- android/gradle.properties ---"
+          cat android/gradle.properties 2>/dev/null || echo "(not found)"
+          echo ""
+          
+          echo "========================================="
+          echo "🧹 STEP 4: Unset any env vars that could inject the property"
+          echo "========================================="
+          echo "GRADLE_OPTS=${GRADLE_OPTS:-<not set>}"
+          echo "JAVA_OPTS=${JAVA_OPTS:-<not set>}"
+          echo "JAVA_HOME=$JAVA_HOME"
+          echo "_JAVA_OPTIONS=${_JAVA_OPTIONS:-<not set>}"
           java -version
+          
+          echo "========================================="
+          echo "🔑 STEP 5: Grant gradlew execute permission"
+          echo "========================================="
+          chmod +x expo-app/android/gradlew
 
       - name: 🔨 Stage 5b — Build Debug APK
         working-directory: expo-app/android
         env:
-          GRADLE_USER_HOME: /home/runner/.gradle-fresh
+          GRADLE_USER_HOME: /tmp/gradle-clean-home
         run: |
-          mkdir -p $GRADLE_USER_HOME
-          echo "🔧 Using fresh GRADLE_USER_HOME: $GRADLE_USER_HOME"
-          echo "🔧 Using JAVA_HOME: $JAVA_HOME"
+          # Create fresh Gradle user home
+          rm -rf "$GRADLE_USER_HOME" 2>/dev/null || true
+          mkdir -p "$GRADLE_USER_HOME"
+          
+          # Inject JAVA_HOME into GRADLE_OPTS so it's picked up at the earliest stage
+          export GRADLE_OPTS="-Dorg.gradle.java.home=$JAVA_HOME"
+          
+          # Final safety: strip property from project gradle.properties one more time
+          sed -i '/org\.gradle\.java\.home/d' gradle.properties 2>/dev/null || true
+          
+          echo "🔧 GRADLE_USER_HOME: $GRADLE_USER_HOME"
+          echo "🔧 JAVA_HOME: $JAVA_HOME"
+          echo "🔧 GRADLE_OPTS: $GRADLE_OPTS"
+          echo "🔧 Contents of gradle.properties:"
+          cat gradle.properties
+          echo ""
+          
+          # Run Gradle with explicit java home override
           ./gradlew app:assembleDebug \
             -Dorg.gradle.java.home="$JAVA_HOME" \
             -x lint -x test \
             --no-daemon \
-            --stacktrace
+            --no-build-cache \
+            --stacktrace 2>&1 || {
+              echo ""
+              echo "========================================="
+              echo "❌ Gradle build failed. Dumping diagnostics..."
+              echo "========================================="
+              echo "All gradle.properties found:"
+              find /home/runner/work -name "gradle.properties" -exec echo "FILE: {}" \; -exec grep -l "java.home" {} \; 2>/dev/null || true
+              echo "GRADLE_USER_HOME contents:"
+              ls -laR "$GRADLE_USER_HOME" 2>/dev/null | head -50
+              exit 1
+            }
 
       - name: 🔍 Stage 5c — Verify APK exists
         id: find-apk
