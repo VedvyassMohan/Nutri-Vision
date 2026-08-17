@@ -37,7 +37,6 @@ jobs:
         with:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: temurin
-          cache: gradle
 
       - name: 📦 Stage 3 — Setup Android SDK
         uses: android-actions/setup-android@v3
@@ -75,13 +74,22 @@ jobs:
             --config metro.config.js \
             --reset-cache || npx expo export:embed 2>/dev/null || true
 
-      - name: 🔑 Stage 5 — Grant Gradle execute permission
-        run: chmod +x expo-app/android/gradlew
-
-      - name: 🔨 Stage 5b — Build Debug APK (Skipped)
-        continue-on-error: true
+      - name: 🔑 Stage 5 — Clean Stale Gradle Cache Properties & Grant Permissions
         run: |
-          echo "⏩ Stage 5b skipped per configuration request."
+          rm -f ~/.gradle/gradle.properties 2>/dev/null || true
+          rm -f $HOME/.gradle/gradle.properties 2>/dev/null || true
+          chmod +x expo-app/android/gradlew
+
+      - name: 🔨 Stage 5b — Build Debug APK
+        working-directory: expo-app/android
+        run: |
+          ./gradlew app:assembleDebug \
+            -Dorg.gradle.java.home="$JAVA_HOME" \
+            -x lint -x test \
+            --build-cache \
+            --parallel \
+            --no-daemon \
+            --stacktrace
 
       - name: 🔍 Stage 5c — Verify APK exists
         id: find-apk
