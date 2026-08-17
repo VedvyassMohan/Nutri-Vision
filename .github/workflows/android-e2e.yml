@@ -82,6 +82,7 @@ jobs:
         working-directory: expo-app/android
         run: |
           ./gradlew app:assembleDebug \
+            -Dorg.gradle.java.home="$JAVA_HOME" \
             -x lint -x test \
             --build-cache \
             --parallel \
