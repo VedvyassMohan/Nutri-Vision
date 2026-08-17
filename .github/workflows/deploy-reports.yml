@@ -1,0 +1,62 @@
+name: 🚀 Deploy Test Reports to GitHub Pages
+
+on:
+  workflow_run:
+    workflows: ["🤖 Android E2E Automation + CI/CD Pipeline"]
+    types:
+      - completed
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages-deploy"
+  cancel-in-progress: false
+
+jobs:
+  deploy-reports-standalone:
+    name: 📊 Publish & Archive Execution Reports
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+        continue-on-error: true
+
+      - name: ⬇️ Checkout main fallback
+        if: failure()
+        uses: actions/checkout@v4
+
+      - name: 📥 Download Test Results Artifact
+        uses: actions/download-artifact@v4
+        with:
+          run-id: ${{ github.event.workflow_run.id }}
+          path: downloaded-results/
+        continue-on-error: true
+
+      - name: 📂 Organize Reports History
+        run: |
+          mkdir -p reports/latest/HTML
+          mkdir -p reports/latest/Excel
+          mkdir -p reports/latest/JSON
+          mkdir -p reports/latest/Summary
+          mkdir -p "reports/history/run-${{ github.event.workflow_run.run_number || github.run_number }}"
+
+          if [ -d downloaded-results ]; then
+            cp -r downloaded-results/* reports/latest/ 2>/dev/null || true
+            cp -r downloaded-results/* "reports/history/run-${{ github.event.workflow_run.run_number || github.run_number }}/" 2>/dev/null || true
+          fi
+
+      - name: 🚀 Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: reports
+          destination_dir: reports
+          keep_files: true
+          commit_message: "ci(reports): auto-publish test execution results [run #${{ github.event.workflow_run.run_number || github.run_number }}]"
