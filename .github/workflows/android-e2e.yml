@@ -74,20 +74,38 @@ jobs:
             --config metro.config.js \
             --reset-cache || npx expo export:embed 2>/dev/null || true
 
-      - name: 🔑 Stage 5 — Clean Stale Gradle Cache Properties & Grant Permissions
+      - name: 🔑 Stage 5 — Nuclear Gradle Cache Purge & Grant Permissions
         run: |
-          rm -f ~/.gradle/gradle.properties 2>/dev/null || true
-          rm -f $HOME/.gradle/gradle.properties 2>/dev/null || true
+          echo "🧹 Removing entire ~/.gradle to eliminate any cached gradle.properties with stale Windows paths..."
+          rm -rf ~/.gradle 2>/dev/null || true
+          rm -rf $HOME/.gradle 2>/dev/null || true
+          mkdir -p $HOME/.gradle
+          
+          echo "🧹 Scanning ALL .properties files in expo-app/android for org.gradle.java.home..."
+          find expo-app/android -name "gradle.properties" -type f | while read f; do
+            if grep -q "org.gradle.java.home" "$f" 2>/dev/null; then
+              echo "  ⚠️  Found org.gradle.java.home in: $f — removing it"
+              sed -i '/org\.gradle\.java\.home/d' "$f"
+            fi
+          done
+          
+          echo "🔑 Granting execute permission to gradlew..."
           chmod +x expo-app/android/gradlew
+          
+          echo "✅ JAVA_HOME = $JAVA_HOME"
+          java -version
 
       - name: 🔨 Stage 5b — Build Debug APK
         working-directory: expo-app/android
+        env:
+          GRADLE_USER_HOME: /home/runner/.gradle-fresh
         run: |
+          mkdir -p $GRADLE_USER_HOME
+          echo "🔧 Using fresh GRADLE_USER_HOME: $GRADLE_USER_HOME"
+          echo "🔧 Using JAVA_HOME: $JAVA_HOME"
           ./gradlew app:assembleDebug \
             -Dorg.gradle.java.home="$JAVA_HOME" \
             -x lint -x test \
-            --build-cache \
-            --parallel \
             --no-daemon \
             --stacktrace
 
