@@ -13,7 +13,7 @@ Stage 4: Install JS Dependencies
 Stage 5: Build Debug APK via Gradle
        │
        ▼
-Stage 6: Create & Launch Android Emulator (macos-13 runner)
+Stage 6: Create & Launch Android Emulator (ubuntu-latest + KVM via android-emulator-runner)
 Stage 7: Verify Emulator Boot Readiness
 Stage 8: Install APK onto Emulator
 Stage 9: Launch Appium 2.x Server

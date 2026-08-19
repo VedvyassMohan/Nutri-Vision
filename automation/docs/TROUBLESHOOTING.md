@@ -6,7 +6,7 @@
 
 ## 2. Emulator Startup Timeout
 - **Symptom**: `adb wait-for-device` times out after 10 minutes.
-- **Solution**: The workflow uses the `macos-13` runner with hardware acceleration (HAXM/Hypervisor) enabled to boot Android emulators in under 2 minutes.
+- **Solution**: The workflow uses `ubuntu-latest` with KVM hardware acceleration enabled via `reactivecircus/android-emulator-runner@v2`. This boots Android emulators reliably in under 2 minutes. KVM is enabled by adding a udev rule for `/dev/kvm` before launching the emulator. The previous `macos-13` runner was deprecated by GitHub in 2025.
 
 ## 3. Appium Server Connection Refused (`ECONNREFUSED 127.0.0.1:4723`)
 - **Symptom**: WebdriverIO fails to connect to Appium.

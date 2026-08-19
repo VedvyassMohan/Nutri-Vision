@@ -211,7 +211,7 @@ jobs:
   # ============================================================
   e2e-tests:
     name: 🧪 E2E Tests — Appium + Android Emulator
-    runs-on: macos-13
+    runs-on: ubuntu-latest
     needs: build-apk
     timeout-minutes: 90
     outputs:
@@ -248,92 +248,82 @@ jobs:
             echo "❌ APK not found in downloaded artifact!"
             exit 1
           fi
-          echo "APK_PATH=$APK" >> $GITHUB_ENV
+          echo "APK_PATH=$(realpath $APK)" >> $GITHUB_ENV
           echo "✅ APK found: $APK ($(du -sh $APK | cut -f1))"
 
-      - name: 📱 Stage 6 — Install Android SDK components
+      - name: 🔧 Enable KVM for Hardware Acceleration
         run: |
-          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager \
-            "platform-tools" \
-            "emulator" \
-            "system-images;android-${{ env.ANDROID_API_LEVEL }};${{ env.ANDROID_TARGET }};${{ env.ANDROID_ABI }}" \
-            --sdk_root=$ANDROID_HOME
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
 
-      - name: 📱 Stage 6b — Create AVD
-        run: |
-          echo "no" | $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager create avd \
-            -n ${{ env.EMULATOR_NAME }} \
-            -k "system-images;android-${{ env.ANDROID_API_LEVEL }};${{ env.ANDROID_TARGET }};${{ env.ANDROID_ABI }}" \
-            --force
-
-      - name: 🚀 Stage 6c — Start Android Emulator
-        run: |
-          $ANDROID_HOME/emulator/emulator \
-            -avd ${{ env.EMULATOR_NAME }} \
-            -no-audio -no-window \
-            -gpu swiftshader_indirect \
-            -no-snapshot -no-boot-anim &
-          echo "EMULATOR_PID=$!" >> $GITHUB_ENV
-
-      - name: ✅ Stage 7 — Wait for Emulator Boot
-        timeout-minutes: 10
-        run: |
-          $ANDROID_HOME/platform-tools/adb wait-for-device
-          until $ANDROID_HOME/platform-tools/adb shell getprop sys.boot_completed 2>/dev/null | grep -q "1"; do
-            echo "⏳ Waiting for boot..."
-            sleep 5
-          done
-          $ANDROID_HOME/platform-tools/adb shell input keyevent 82
-          echo "✅ Emulator booted"
-
-      - name: 📲 Stage 8 — Install APK
-        run: |
-          $ANDROID_HOME/platform-tools/adb install -r "$APK_PATH"
-          echo "✅ APK installed"
-
-      - name: 🤖 Stage 9 — Start Appium Server
+      - name: 🤖 Install Appium & UiAutomator2 Driver
         run: |
           npm install -g appium@2.5.4
           appium driver install uiautomator2
-          mkdir -p automation/logs
-          appium server --port 4723 --address 0.0.0.0 \
-            --log automation/logs/appium-server.log &
-          echo "APPIUM_PID=$!" >> $GITHUB_ENV
-          sleep 8
+          echo "✅ Appium $(appium --version) + UiAutomator2 installed"
 
-      - name: 🏥 Stage 10 — Verify Appium Health
-        run: |
-          for i in {1..15}; do
-            CODE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:4723/status || echo "000")
-            if [ "$CODE" = "200" ]; then
-              echo "✅ Appium ready (attempt $i)"
-              break
-            fi
-            echo "⏳ Attempt $i — HTTP $CODE, retrying..."
-            sleep 3
-          done
+      - name: 📱 Stage 6-11 — Launch Emulator & Run E2E Tests
+        uses: reactivecircus/android-emulator-runner@v2
+        timeout-minutes: 60
+        with:
+          api-level: ${{ env.ANDROID_API_LEVEL }}
+          target: ${{ env.ANDROID_TARGET }}
+          arch: ${{ env.ANDROID_ABI }}
+          avd-name: ${{ env.EMULATOR_NAME }}
+          emulator-options: -no-window -no-audio -no-snapshot -no-boot-anim -gpu swiftshader_indirect
+          disable-animations: true
+          force-avd-creation: true
+          script: |
+            echo "========================================="
+            echo "✅ Emulator booted — starting test pipeline"
+            echo "========================================="
 
-      - name: 🧪 Stage 11 — Execute E2E Tests
-        working-directory: automation
-        env:
-          ANDROID_DEVICE_NAME: ${{ env.EMULATOR_NAME }}
-          ANDROID_VERSION: "13.0"
-          APK_PATH: ${{ env.APK_PATH }}
-        run: |
-          mkdir -p reports/allure-results reports/junit reports/JSON \
-                   reports/Excel reports/HTML reports/Summary screenshots logs
-          npx wdio run config/wdio.conf.ts 2>&1 | tee logs/test-run.log || true
+            # Stage 8 — Install APK
+            echo "📲 Stage 8 — Installing APK..."
+            adb install -r "$APK_PATH"
+            echo "✅ APK installed"
 
-      - name: 📸 Stage 12 — Capture Device Screenshots
-        if: always()
-        run: |
-          $ANDROID_HOME/platform-tools/adb shell screencap -p /sdcard/final-state.png 2>/dev/null || true
-          $ANDROID_HOME/platform-tools/adb pull /sdcard/final-state.png automation/screenshots/ 2>/dev/null || true
+            # Stage 9 — Start Appium Server
+            echo "🤖 Stage 9 — Starting Appium Server..."
+            mkdir -p automation/logs
+            appium server --port 4723 --address 0.0.0.0 \
+              --log automation/logs/appium-server.log &
+            APPIUM_PID=$!
+            sleep 10
 
-      - name: 📋 Stage 13 — Capture Device Logs
-        if: always()
-        run: |
-          $ANDROID_HOME/platform-tools/adb logcat -d > automation/logs/device-logcat.log 2>/dev/null || true
+            # Stage 10 — Verify Appium Health
+            echo "🏥 Stage 10 — Verifying Appium Health..."
+            for i in {1..20}; do
+              CODE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:4723/status || echo "000")
+              if [ "$CODE" = "200" ]; then
+                echo "✅ Appium ready (attempt $i)"
+                break
+              fi
+              echo "⏳ Attempt $i — HTTP $CODE, retrying..."
+              sleep 3
+            done
+
+            # Stage 11 — Execute E2E Tests
+            echo "🧪 Stage 11 — Executing E2E Tests..."
+            cd automation
+            mkdir -p reports/allure-results reports/junit reports/JSON \
+                     reports/Excel reports/HTML reports/Summary screenshots logs
+            npx wdio run config/wdio.conf.ts 2>&1 | tee logs/test-run.log || true
+            cd ..
+
+            # Capture screenshots while emulator is still running
+            echo "📸 Capturing final device screenshot..."
+            adb shell screencap -p /sdcard/final-state.png 2>/dev/null || true
+            adb pull /sdcard/final-state.png automation/screenshots/ 2>/dev/null || true
+
+            # Capture device logs
+            echo "📋 Capturing device logcat..."
+            adb logcat -d > automation/logs/device-logcat.log 2>/dev/null || true
+
+            # Cleanup Appium
+            kill $APPIUM_PID 2>/dev/null || true
+            echo "✅ Test pipeline complete"
 
       - name: 📊 Stage 14-16 — Generate Reports
         if: always()
@@ -379,12 +369,6 @@ jobs:
           | ⏭ Skipped | **$S** |
           | 📈 Pass Rate | **$R%** |
           EOF
-
-      - name: 🧹 Cleanup Emulator & Appium
-        if: always()
-        run: |
-          kill $APPIUM_PID 2>/dev/null || true
-          kill $EMULATOR_PID 2>/dev/null || true
 
       - name: 📤 Stage 18 — Upload All Artifacts
         if: always()
