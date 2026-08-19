@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const LOGS_DIR = path.resolve(__dirname, '../../logs');
+const LOGS_DIR = path.resolve(__dirname, '../logs');
 const LOG_FILE = path.join(LOGS_DIR, `test-run-${new Date().toISOString().replace(/[:.]/g, '-')}.log`);
 
 if (!fs.existsSync(LOGS_DIR)) {

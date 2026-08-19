@@ -5,11 +5,11 @@ import fs from 'fs';
 import path from 'path';
 import { TestResult } from '../utils/LogUtil';
 
-const REPORTS_DIR = path.resolve(__dirname, '../../reports/HTML');
+const REPORTS_DIR = path.resolve(__dirname, '../reports/HTML');
 
 export class HtmlReporter {
   static async generate() {
-    const resultsPath = path.resolve(__dirname, '../../reports/execution-results.json');
+    const resultsPath = path.resolve(__dirname, '../reports/execution-results.json');
     let results: TestResult[] = [];
 
     if (fs.existsSync(resultsPath)) {
@@ -256,7 +256,7 @@ ${failedList || 'None — all tests passed!'}
 [📊 View Full HTML Report](./HTML/execution-report.html) | [📑 View Excel Report](./Excel/Automation_Test_Report.xlsx)
 `;
 
-    const summaryDir = path.resolve(__dirname, '../../reports/Summary');
+    const summaryDir = path.resolve(__dirname, '../reports/Summary');
     fs.mkdirSync(summaryDir, { recursive: true });
     fs.writeFileSync(path.join(summaryDir, 'summary.md'), md);
     console.log('📝 Markdown summary written.');

@@ -2,7 +2,7 @@ import { driver } from '@wdio/globals';
 import fs from 'fs';
 import path from 'path';
 
-const SCREENSHOTS_DIR = path.resolve(__dirname, '../../screenshots');
+const SCREENSHOTS_DIR = path.resolve(__dirname, '../screenshots');
 
 if (!fs.existsSync(SCREENSHOTS_DIR)) {
   fs.mkdirSync(SCREENSHOTS_DIR, { recursive: true });

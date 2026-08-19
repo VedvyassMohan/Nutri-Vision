@@ -6,11 +6,11 @@ import fs from 'fs';
 import path from 'path';
 import { TestResult } from '../utils/LogUtil';
 
-const REPORTS_DIR = path.resolve(__dirname, '../../reports/Excel');
+const REPORTS_DIR = path.resolve(__dirname, '../reports/Excel');
 
 export class ExcelReporter {
   static async generate() {
-    const resultsPath = path.resolve(__dirname, '../../reports/execution-results.json');
+    const resultsPath = path.resolve(__dirname, '../reports/execution-results.json');
     let results: TestResult[] = [];
 
     if (fs.existsSync(resultsPath)) {

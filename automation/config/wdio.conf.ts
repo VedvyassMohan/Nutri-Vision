@@ -61,13 +61,13 @@ export const config: Options.Testrunner = {
   },
   afterTest: async function (test, context, { passed }) {
     if (!passed) {
-      const { ScreenshotUtil } = await import('./utils/ScreenshotUtil');
+      const { ScreenshotUtil } = await import('../utils/ScreenshotUtil');
       await ScreenshotUtil.captureOnFailure(test.title);
     }
   },
   onComplete: async function () {
-    const { ExcelReporter } = await import('./reporters/ExcelReporter');
-    const { HtmlReporter } = await import('./reporters/HtmlReporter');
+    const { ExcelReporter } = await import('../reporters/ExcelReporter');
+    const { HtmlReporter } = await import('../reporters/HtmlReporter');
     await ExcelReporter.generate();
     await HtmlReporter.generate();
   }
