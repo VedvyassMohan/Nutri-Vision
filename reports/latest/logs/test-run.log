@@ -1,4 +1,4 @@
-2026-08-21T03:12:19.456Z ERROR @wdio/config:ConfigParser: Failed loading configuration file: file:///home/runner/work/Nutri-Vision/Nutri-Vision/automation/config/wdio.conf.ts: ⨯ Unable to compile TypeScript:
+2026-08-21T07:48:50.709Z ERROR @wdio/config:ConfigParser: Failed loading configuration file: file:///home/runner/work/Nutri-Vision/Nutri-Vision/automation/config/wdio.conf.ts: ⨯ Unable to compile TypeScript:
 config/wdio.conf.ts(14,5): error TS2322: Type 'string' is not assignable to type 'WebdriverIO'.
 config/wdio.conf.ts(15,5): error TS2322: Type 'string' is not assignable to type 'WebdriverIO'.
 config/wdio.conf.ts(16,5): error TS2322: Type 'string' is not assignable to type 'WebdriverIO'.

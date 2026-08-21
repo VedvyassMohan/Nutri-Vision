@@ -1,17 +1,17 @@
-2026-08-19 06:31:44:179 [Appium] Welcome to Appium v3.6.0
-2026-08-19 06:31:44:181 [Appium] The autodetected Appium home path: /home/runner/.appium
-2026-08-19 06:31:44:183 [Appium] Attempting to load driver uiautomator2...
-2026-08-19 06:31:44:187 [Appium] Requiring driver at /home/runner/.appium/node_modules/appium-uiautomator2-driver/build/lib/index.js
-2026-08-19 06:31:45:034 [Appium] AndroidUiautomator2Driver has been successfully loaded in 0.850s
-2026-08-19 06:31:45:062 [Appium] Appium REST http interface listener started on http://0.0.0.0:4723
-2026-08-19 06:31:45:064 [Appium] You can provide the following URLs in your client code to connect to this server:
+2026-08-21 07:48:34:018 [Appium] Welcome to Appium v3.6.0
+2026-08-21 07:48:34:021 [Appium] The autodetected Appium home path: /home/runner/.appium
+2026-08-21 07:48:34:022 [Appium] Attempting to load driver uiautomator2...
+2026-08-21 07:48:34:025 [Appium] Requiring driver at /home/runner/.appium/node_modules/appium-uiautomator2-driver/build/lib/index.js
+2026-08-21 07:48:34:781 [Appium] AndroidUiautomator2Driver has been successfully loaded in 0.758s
+2026-08-21 07:48:34:825 [Appium] Appium REST http interface listener started on http://0.0.0.0:4723
+2026-08-21 07:48:34:826 [Appium] You can provide the following URLs in your client code to connect to this server:
 	http://127.0.0.1:4723/ (only accessible from the same host)
-	http://10.1.0.234:4723/
-2026-08-19 06:31:45:064 [Appium] Available drivers:
-2026-08-19 06:31:45:065 [Appium]   - uiautomator2@8.4.0 (automationName 'UiAutomator2')
-2026-08-19 06:31:45:065 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
-2026-08-19 06:31:53:148 [HTTP] --> GET /status 
-2026-08-19 06:31:53:150 [AppiumDriver@95dc] Calling AppiumDriver.getStatus() with args: []
-2026-08-19 06:31:53:152 [AppiumDriver@95dc] Responding to client with driver.getStatus() result: {"ready":true,"message":"The server is ready to accept new connections","build":{"version":"3.6.0"}}
-2026-08-19 06:31:53:157 [HTTP] <-- GET /status 200 7 ms - 110
-2026-08-19 06:32:02:312 [Appium] Received SIGTERM - shutting down
+	http://10.1.0.117:4723/
+2026-08-21 07:48:34:826 [Appium] Available drivers:
+2026-08-21 07:48:34:827 [Appium]   - uiautomator2@8.5.0 (automationName 'UiAutomator2')
+2026-08-21 07:48:34:827 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
+2026-08-21 07:48:42:907 [HTTP] --> GET /status 
+2026-08-21 07:48:42:914 [AppiumDriver@2732] Calling AppiumDriver.getStatus() with args: []
+2026-08-21 07:48:42:918 [AppiumDriver@2732] Responding to client with driver.getStatus() result: {"ready":true,"message":"The server is ready to accept new connections","build":{"version":"3.6.0"}}
+2026-08-21 07:48:42:926 [HTTP] <-- GET /status 200 16 ms - 110
+2026-08-21 07:48:54:281 [Appium] Received SIGTERM - shutting down
