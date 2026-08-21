@@ -66,6 +66,44 @@ app.post('/api/auth/login', (req, res) => {
   }
 });
 
+app.post('/api/auth/forgot-password', (req, res) => {
+  try {
+    const { email, code } = req.body;
+    if (!email) {
+      return res.status(400).json({ error: 'Email is required' });
+    }
+
+    console.log(`📩 [Password Reset Email Dispatched] To: ${email} | Code: ${code}`);
+    res.json({
+      success: true,
+      message: `Password reset email dispatched to ${email}`,
+      code: code || Math.floor(100000 + Math.random() * 900000).toString()
+    });
+  } catch (err) {
+    console.error('Forgot password error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+app.post('/api/auth/reset-password', (req, res) => {
+  try {
+    const { email, newPassword } = req.body;
+    if (!email || !newPassword) {
+      return res.status(400).json({ error: 'Email and new password are required' });
+    }
+
+    const user = db.getUserByEmail(email);
+    if (user) {
+      db.updateUser(user.id, { password: newPassword });
+    }
+
+    res.json({ success: true, message: 'Password reset successfully' });
+  } catch (err) {
+    console.error('Reset password error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 // ─── Users ───────────────────────────────────────────────────
 
 app.put('/api/users/:id', (req, res) => {

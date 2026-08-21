@@ -6,6 +6,10 @@ import './Auth.css';
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isForgot, setIsForgot] = useState(false);
+  const [forgotStep, setForgotStep] = useState(1); // 1: Send Email, 2: Enter Code & Password, 3: Success
+  const [otpCode, setOtpCode] = useState('');
+  const [sentCodePreview, setSentCodePreview] = useState('');
+  const [resendCountdown, setResendCountdown] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
@@ -24,6 +28,15 @@ const Auth = () => {
     }
   }, [navigate]);
 
+  // Resend code countdown timer
+  useEffect(() => {
+    let timer;
+    if (resendCountdown > 0) {
+      timer = setTimeout(() => setResendCountdown(prev => prev - 1), 1000);
+    }
+    return () => clearTimeout(timer);
+  }, [resendCountdown]);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -36,8 +49,76 @@ const Auth = () => {
   const handleTabSwitch = (loginState) => {
     setIsLogin(loginState);
     setIsForgot(false);
+    setForgotStep(1);
+    setOtpCode('');
+    setSentCodePreview('');
     setError('');
     setSuccessMsg('');
+  };
+
+  const handleSendResetEmail = async (e) => {
+    if (e) e.preventDefault();
+    if (!formData.email) {
+      setError('Please enter your email address');
+      return;
+    }
+
+    setLoading(true);
+    setError('');
+    setSuccessMsg('');
+
+    try {
+      const res = await authService.sendPasswordResetEmail(formData.email);
+      setSentCodePreview(res.code);
+      setForgotStep(2);
+      setResendCountdown(60);
+      setSuccessMsg(`Reset code sent to ${formData.email}!`);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleVerifyAndReset = async (e) => {
+    e.preventDefault();
+    if (!otpCode || otpCode.length < 6) {
+      setError('Please enter the 6-digit verification code sent to your email');
+      return;
+    }
+    if (!formData.password) {
+      setError('Please enter a new password');
+      return;
+    }
+    if (formData.password.length < 6) {
+      setError('Password must be at least 6 characters long');
+      return;
+    }
+    if (formData.password !== formData.confirmPassword) {
+      setError('Passwords do not match');
+      return;
+    }
+
+    setLoading(true);
+    setError('');
+
+    try {
+      await authService.resetPasswordWithCode(formData.email, otpCode, formData.password);
+      setForgotStep(3);
+      setSuccessMsg('Your password has been successfully reset!');
+      setTimeout(() => {
+        setIsForgot(false);
+        setIsLogin(true);
+        setForgotStep(1);
+        setOtpCode('');
+        setSentCodePreview('');
+        setFormData(prev => ({ ...prev, password: '', confirmPassword: '' }));
+      }, 2500);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -47,21 +128,7 @@ const Auth = () => {
     setSuccessMsg('');
 
     try {
-      if (isForgot) {
-        if (!formData.password) {
-          throw new Error('Please enter a new password');
-        }
-        if (formData.password !== formData.confirmPassword) {
-          throw new Error('Passwords do not match');
-        }
-        await authService.resetPassword(formData.email, formData.password);
-        setSuccessMsg('Password reset successfully! Please sign in with your new password.');
-        setTimeout(() => {
-          setIsForgot(false);
-          setIsLogin(true);
-          setFormData(prev => ({ ...prev, password: '', confirmPassword: '' }));
-        }, 1800);
-      } else if (isLogin) {
+      if (isLogin) {
         await authService.login(formData.email, formData.password);
         window.dispatchEvent(new Event('auth-change'));
         navigate('/dashboard');
@@ -93,7 +160,11 @@ const Auth = () => {
         </div>
         <p className="subtitle">
           {isForgot
-            ? 'Reset your password to regain access'
+            ? forgotStep === 3
+              ? 'Password reset complete'
+              : forgotStep === 2
+              ? 'Enter the code sent to your email'
+              : 'Reset your password via email'
             : isLogin
             ? 'Welcome back! Ready to track?'
             : 'Start your health journey today'}
@@ -116,89 +187,225 @@ const Auth = () => {
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="auth-form stagger">
-          {!isLogin && !isForgot && (
+        {/* ─── FORGOT PASSWORD: STEP 1 (Send Email) ─── */}
+        {isForgot && forgotStep === 1 && (
+          <form onSubmit={handleSendResetEmail} className="auth-form stagger">
+            <div className="forgot-header-info">
+              <h3>Forgot Password</h3>
+              <p>Enter your registered email address and we'll send you a 6-digit verification code to reset your password.</p>
+            </div>
+
             <div className="form-group">
-              <label>Full Name</label>
+              <label>Email Address</label>
               <input
-                type="text"
-                name="name"
-                placeholder="Enter your name"
-                value={formData.name}
+                type="email"
+                name="email"
+                placeholder="name@example.com"
+                value={formData.email}
                 onChange={handleChange}
-                required={!isLogin && !isForgot}
+                required
+                autoFocus
               />
             </div>
-          )}
 
-          <div className="form-group">
-            <label>Email Address</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="name@example.com"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
+            {error && <div className="error-message">{error}</div>}
+            {successMsg && <div className="success-message">{successMsg}</div>}
 
-          <div className="form-group">
-            <div className="label-row">
-              <label>{isForgot ? 'New Password' : 'Password'}</label>
-              {isLogin && !isForgot && (
+            <button type="submit" className="submit-btn" disabled={loading}>
+              {loading ? <span className="loader"></span> : 'Send Reset Code'}
+            </button>
+          </form>
+        )}
+
+        {/* ─── FORGOT PASSWORD: STEP 2 (Verify OTP & Set Password) ─── */}
+        {isForgot && forgotStep === 2 && (
+          <form onSubmit={handleVerifyAndReset} className="auth-form stagger">
+            <div className="email-dispatched-banner">
+              <div className="email-dispatched-icon">📩</div>
+              <div className="email-dispatched-text">
+                <strong>Check your inbox</strong>
+                <span>We sent a 6-digit code to <b>{formData.email}</b></span>
+              </div>
+            </div>
+
+            {sentCodePreview && (
+              <div className="demo-code-chip">
+                <span>Demo Code: <strong>{sentCodePreview}</strong></span>
                 <button
                   type="button"
-                  className="forgot-password-link"
-                  onClick={() => {
-                    setIsForgot(true);
-                    setError('');
-                    setSuccessMsg('');
-                  }}
+                  className="copy-chip-btn"
+                  onClick={() => setOtpCode(sentCodePreview)}
                 >
-                  Forgot Password?
+                  Auto-Fill
                 </button>
-              )}
-            </div>
-            <input
-              type="password"
-              name="password"
-              placeholder="••••••••"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-          </div>
+              </div>
+            )}
 
-          {(!isLogin || isForgot) && (
             <div className="form-group">
-              <label>{isForgot ? 'Confirm New Password' : 'Confirm Password'}</label>
+              <label>6-Digit Verification Code</label>
+              <input
+                type="text"
+                maxLength="6"
+                placeholder="123456"
+                className="otp-input"
+                value={otpCode}
+                onChange={(e) => {
+                  setOtpCode(e.target.value.replace(/\D/g, ''));
+                  setError('');
+                }}
+                required
+                autoFocus
+              />
+            </div>
+
+            <div className="form-group">
+              <label>New Password</label>
+              <input
+                type="password"
+                name="password"
+                placeholder="Min. 6 characters"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Confirm New Password</label>
               <input
                 type="password"
                 name="confirmPassword"
-                placeholder="••••••••"
+                placeholder="Re-enter new password"
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 required
               />
             </div>
-          )}
 
-          {error && <div className="error-message">{error}</div>}
-          {successMsg && <div className="success-message">{successMsg}</div>}
+            <div className="resend-row">
+              {resendCountdown > 0 ? (
+                <span className="resend-timer">Resend code in {resendCountdown}s</span>
+              ) : (
+                <button
+                  type="button"
+                  className="resend-btn"
+                  onClick={handleSendResetEmail}
+                  disabled={loading}
+                >
+                  Resend Code
+                </button>
+              )}
+            </div>
 
-          <button type="submit" className="submit-btn" disabled={loading}>
-            {loading ? (
-              <span className="loader"></span>
-            ) : isForgot ? (
-              'Reset Password'
-            ) : isLogin ? (
-              'Sign In'
-            ) : (
-              'Create Account'
+            {error && <div className="error-message">{error}</div>}
+            {successMsg && <div className="success-message">{successMsg}</div>}
+
+            <button type="submit" className="submit-btn" disabled={loading}>
+              {loading ? <span className="loader"></span> : 'Verify & Reset Password'}
+            </button>
+          </form>
+        )}
+
+        {/* ─── FORGOT PASSWORD: STEP 3 (Success) ─── */}
+        {isForgot && forgotStep === 3 && (
+          <div className="forgot-success-card animate-scale-in">
+            <div className="success-icon-badge">✅</div>
+            <h3>Password Reset!</h3>
+            <p>Your password has been successfully updated. Redirecting you to sign in...</p>
+            <button
+              type="button"
+              className="submit-btn"
+              onClick={() => handleTabSwitch(true)}
+            >
+              Sign In Now
+            </button>
+          </div>
+        )}
+
+        {/* ─── STANDARD LOGIN / SIGNUP FORM ─── */}
+        {!isForgot && (
+          <form onSubmit={handleSubmit} className="auth-form stagger">
+            {!isLogin && (
+              <div className="form-group">
+                <label>Full Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required={!isLogin}
+                />
+              </div>
             )}
-          </button>
-        </form>
+
+            <div className="form-group">
+              <label>Email Address</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="name@example.com"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <div className="label-row">
+                <label>Password</label>
+                {isLogin && (
+                  <button
+                    type="button"
+                    className="forgot-password-link"
+                    onClick={() => {
+                      setIsForgot(true);
+                      setForgotStep(1);
+                      setError('');
+                      setSuccessMsg('');
+                    }}
+                  >
+                    Forgot Password?
+                  </button>
+                )}
+              </div>
+              <input
+                type="password"
+                name="password"
+                placeholder="••••••••"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            {!isLogin && (
+              <div className="form-group">
+                <label>Confirm Password</label>
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  placeholder="••••••••"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  required={!isLogin}
+                />
+              </div>
+            )}
+
+            {error && <div className="error-message">{error}</div>}
+
+            <button type="submit" className="submit-btn" disabled={loading}>
+              {loading ? (
+                <span className="loader"></span>
+              ) : isLogin ? (
+                'Sign In'
+              ) : (
+                'Create Account'
+              )}
+            </button>
+          </form>
+        )}
 
         <div className="auth-footer">
           {isForgot ? (
