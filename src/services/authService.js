@@ -88,6 +88,29 @@ export const authService = {
     return user;
   },
 
+  resetPassword: async (email, newPassword) => {
+    await authService.delay();
+    const users = authService.getUsers();
+    const userIndex = users.findIndex(
+      u => u.email && u.email.toLowerCase() === email.trim().toLowerCase()
+    );
+
+    if (userIndex === -1) {
+      throw new Error('No account found with this email address');
+    }
+
+    users[userIndex].password = newPassword;
+    localStorage.setItem(USERS_KEY, JSON.stringify(users));
+
+    const currentUser = authService.getCurrentUser();
+    if (currentUser && currentUser.email && currentUser.email.toLowerCase() === email.trim().toLowerCase()) {
+      currentUser.password = newPassword;
+      localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(currentUser));
+    }
+
+    return true;
+  },
+
   logout: () => {
     localStorage.removeItem(CURRENT_USER_KEY);
   },

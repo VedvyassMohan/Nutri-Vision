@@ -5,8 +5,10 @@ import './Auth.css';
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
+  const [isForgot, setIsForgot] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [successMsg, setSuccessMsg] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,15 +30,38 @@ const Auth = () => {
       [e.target.name]: e.target.value
     });
     setError('');
+    setSuccessMsg('');
+  };
+
+  const handleTabSwitch = (loginState) => {
+    setIsLogin(loginState);
+    setIsForgot(false);
+    setError('');
+    setSuccessMsg('');
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
+    setSuccessMsg('');
 
     try {
-      if (isLogin) {
+      if (isForgot) {
+        if (!formData.password) {
+          throw new Error('Please enter a new password');
+        }
+        if (formData.password !== formData.confirmPassword) {
+          throw new Error('Passwords do not match');
+        }
+        await authService.resetPassword(formData.email, formData.password);
+        setSuccessMsg('Password reset successfully! Please sign in with your new password.');
+        setTimeout(() => {
+          setIsForgot(false);
+          setIsLogin(true);
+          setFormData(prev => ({ ...prev, password: '', confirmPassword: '' }));
+        }, 1800);
+      } else if (isLogin) {
         await authService.login(formData.email, formData.password);
         window.dispatchEvent(new Event('auth-change'));
         navigate('/dashboard');
@@ -67,28 +92,32 @@ const Auth = () => {
           <h1>NutriVision</h1>
         </div>
         <p className="subtitle">
-          {isLogin ? 'Welcome back! Ready to track?' : 'Start your health journey today'}
+          {isForgot
+            ? 'Reset your password to regain access'
+            : isLogin
+            ? 'Welcome back! Ready to track?'
+            : 'Start your health journey today'}
         </p>
       </div>
 
       <div className="auth-card animate-scale-in">
         <div className="auth-tabs">
           <button 
-            className={`tab-btn ${isLogin ? 'active' : ''}`}
-            onClick={() => setIsLogin(true)}
+            className={`tab-btn ${isLogin && !isForgot ? 'active' : ''}`}
+            onClick={() => handleTabSwitch(true)}
           >
             Login
           </button>
           <button 
-            className={`tab-btn ${!isLogin ? 'active' : ''}`}
-            onClick={() => setIsLogin(false)}
+            className={`tab-btn ${!isLogin && !isForgot ? 'active' : ''}`}
+            onClick={() => handleTabSwitch(false)}
           >
             Sign Up
           </button>
         </div>
 
         <form onSubmit={handleSubmit} className="auth-form stagger">
-          {!isLogin && (
+          {!isLogin && !isForgot && (
             <div className="form-group">
               <label>Full Name</label>
               <input
@@ -97,7 +126,7 @@ const Auth = () => {
                 placeholder="Enter your name"
                 value={formData.name}
                 onChange={handleChange}
-                required={!isLogin}
+                required={!isLogin && !isForgot}
               />
             </div>
           )}
@@ -115,7 +144,22 @@ const Auth = () => {
           </div>
 
           <div className="form-group">
-            <label>Password</label>
+            <div className="label-row">
+              <label>{isForgot ? 'New Password' : 'Password'}</label>
+              {isLogin && !isForgot && (
+                <button
+                  type="button"
+                  className="forgot-password-link"
+                  onClick={() => {
+                    setIsForgot(true);
+                    setError('');
+                    setSuccessMsg('');
+                  }}
+                >
+                  Forgot Password?
+                </button>
+              )}
+            </div>
             <input
               type="password"
               name="password"
@@ -126,38 +170,52 @@ const Auth = () => {
             />
           </div>
 
-          {!isLogin && (
+          {(!isLogin || isForgot) && (
             <div className="form-group">
-              <label>Confirm Password</label>
+              <label>{isForgot ? 'Confirm New Password' : 'Confirm Password'}</label>
               <input
                 type="password"
                 name="confirmPassword"
                 placeholder="••••••••"
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                required={!isLogin}
+                required
               />
             </div>
           )}
 
           {error && <div className="error-message">{error}</div>}
+          {successMsg && <div className="success-message">{successMsg}</div>}
 
           <button type="submit" className="submit-btn" disabled={loading}>
             {loading ? (
               <span className="loader"></span>
+            ) : isForgot ? (
+              'Reset Password'
+            ) : isLogin ? (
+              'Sign In'
             ) : (
-              isLogin ? 'Sign In' : 'Create Account'
+              'Create Account'
             )}
           </button>
         </form>
 
         <div className="auth-footer">
-          <p>
-            {isLogin ? "Don't have an account? " : "Already have an account? "}
-            <span onClick={() => setIsLogin(!isLogin)}>
-              {isLogin ? 'Sign Up' : 'Login'}
-            </span>
-          </p>
+          {isForgot ? (
+            <p>
+              Remember your password?{' '}
+              <span onClick={() => handleTabSwitch(true)}>
+                Back to Login
+              </span>
+            </p>
+          ) : (
+            <p>
+              {isLogin ? "Don't have an account? " : "Already have an account? "}
+              <span onClick={() => handleTabSwitch(!isLogin)}>
+                {isLogin ? 'Sign Up' : 'Login'}
+              </span>
+            </p>
+          )}
         </div>
       </div>
     </div>

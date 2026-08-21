@@ -121,6 +121,29 @@
   box-shadow: 0 0 0 4px var(--primary-light);
 }
 
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot-password-link {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+  color: var(--primary-dark);
+}
+
 .error-message {
   background: var(--error-bg);
   color: var(--error-text);
@@ -132,10 +155,20 @@
   animation: shake 0.4s ease;
 }
 
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-4px); }
-  75% { transform: translateX(4px); }
+.success-message {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-left: 4px solid #10b981;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .submit-btn {
